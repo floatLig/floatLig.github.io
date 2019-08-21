@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/08-20_19-28-13.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/08-20_19-49-48.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/08-20_20-58-14.png">
-<meta property="og:updated_time" content="2019-08-21T12:56:15.304Z">
+<meta property="og:updated_time" content="2019-08-21T13:15:00.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建自己的博客">
 <meta name="twitter:description" content="部署环境 需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ） 安装git 用cnpm安装hexo   如何初始化个人博客 如何写博客 如何把个人博客部署到远端 如何给个人博客换主题 遇到的其他问题">
@@ -286,7 +286,8 @@
 <h2 id="遇到的其他问题"><a href="#遇到的其他问题" class="headerlink" title="遇到的其他问题"></a>遇到的其他问题</h2><p><strong>问题1：</strong></p>
 <p>npm 安装参数中的 –save是什么意思？  </p>
 <p><strong>回答1：</strong></p>
-<p>当你为你的模块安装一个</p>
+<p>当你为模块安装一个依赖模块时，我们通常得干这么些事<br>    1. 在模块根目录下<code>npm install module-name</code>安装依赖模块<br>    2. 然后将下载的依赖模块版本号等信息添加到模块配置文件package.json中的依赖里（dependencies）</p>
+<p>而<code>--save</code>和<code>--save-dev</code>可以省掉你手动修改package.json文件的步骤<br><code>spm install module-name -save</code> 自动把模块和版本号添加到dependencies部分<br><code>spm install module-name -save-dve</code> 自动把模块和版本号添加到devdependencies部分</p>
 <p><strong>问题2：</strong></p>
 <p>hexo搭建博客过程中出现4000端口被占用</p>
 <p><strong>解答2：</strong></p>
@@ -309,6 +310,31 @@
 <blockquote>
 <p>D:</p>
 </blockquote>
+<p><strong>问题7</strong></p>
+<p>Hexo常用的命令</p>
+<p><strong>解答7</strong></p>
+<ol>
+<li>启动本地服务器，用于预览主题。默认地址：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> (下面两条的命令效果一样，下同)<blockquote>
+<p>hexo s<br>hexo server</p>
+</blockquote>
+</li>
+<li>新建一个新文件，默认为md格式<blockquote>
+<p>hexo new “new article”<br>hexo “new article”</p>
+</blockquote>
+</li>
+<li>自动生成网站静态文件，并部署到设定的仓库<blockquote>
+<p>hexo d<br>hexo deploy</p>
+</blockquote>
+</li>
+<li>清除缓存<code>db.json</code>和已生成的静态文件<code>public</code><blockquote>
+<p>hexo clean</p>
+</blockquote>
+</li>
+<li>常用组合<blockquote>
+<p>hexo clean &amp;&amp; hexo s<br>hexo clean &amp;&amp; hexo d  </p>
+</blockquote>
+</li>
+</ol>
 <p><strong>体会</strong></p>
 <p>不要怕！有虚拟机！错了干掉重来！</p>
 <ol>
