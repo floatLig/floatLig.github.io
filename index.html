@@ -146,196 +146,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-搭建自己的博客 copy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为什么要搭建自己的博客？"><a href="#为什么要搭建自己的博客？" class="headerlink" title="为什么要搭建自己的博客？"></a>为什么要搭建自己的博客？</h2><p>社招和校招，加分项会比较大点</p>
-<p>搭建自己的博客的好处？</p>
-<p>搭建自己博客如果出现了问题，把文件夹干掉再重来就可以<br>出现了问题，大不了从头再来</p>
-<h2 id="博客框架选择"><a href="#博客框架选择" class="headerlink" title="博客框架选择"></a>博客框架选择</h2><p>hexo</p>
-<p>比较成熟，解决方案很多。</p>
-<p>## </p>
-<p>检查node js是否是否安装成功：  </p>
-<blockquote>
-<p>node -v  </p>
-</blockquote>
-<p><img src="../assets/%E5%91%BD%E4%BB%A4%E8%A1%8C1.png" alt></p>
-<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><h3 id="需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）"><a href="#需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）" class="headerlink" title="需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）"></a>需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）</h3><ol>
-<li><p>我们用root权限更新一下软件包管理器，输入下面命令后，再输入自己的root密码</p>
-<blockquote>
-<p>sudo apt-get update  </p>
-</blockquote>
-</li>
-<li><p>安装python，gcc,make,g++ ( 这一步需要下载的东西比较多，时间也会久一点，需要大概700M左右的流量 )</p>
-<blockquote>
-<p>apt-get install python gcc make g++</p>
-</blockquote>
-</li>
-<li><p>【建议不要按以下的方法装】然后接下来我们正式来安装node.js，首先我们来到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网的下载专区</a>，然后在下图中红框内，在标有Source Code上右键，复制下载链接</p>
-<p> <img src="../assets/blogImg/08-20_14-43-57.png" alt></p>
-</li>
-<li><p>然后执行下载的命令,(下图的地址为Source Code的下载地址，大家根据刚刚复制的地址，粘贴进去)</p>
-<blockquote>
-<p>wget <a href="https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz" target="_blank" rel="noopener">https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz</a> </p>
-</blockquote>
-</li>
-<li><p>然后解压刚刚下载的Source Code</p>
-<blockquote>
-<p>tar -zxvf node-v10.16.3.tar.gz</p>
-</blockquote>
-</li>
-<li><p>进入到刚刚解压好的node-v10.16.3.tar.gz文件夹中</p>
-<blockquote>
-<p>cd node-v10.16.3</p>
-</blockquote>
-</li>
-<li><p>然后进行“检测平台安装环境”，“编译”，“执行安装” (这里的make,make install要巨久(っ °Д °;)っ)</p>
-<blockquote>
-<p>./configure<br>make<br>sudo make install</p>
-</blockquote>
-</li>
-<li><p>上面的命令行跑完，node.js就安装好啦，这个时候我们来检验一下node.js是否安装好了</p>
-<blockquote>
-<p>node -v<br>npm -v</p>
-</blockquote>
-</li>
-<li><p>npm换淘宝的源cnpm，下载速度会快一点;</p>
-<blockquote>
-<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>cnpm -v</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><ol>
-<li><blockquote>
-<p>apt-get install git<br>git –version</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="用cnpm安装hexo"><a href="#用cnpm安装hexo" class="headerlink" title="用cnpm安装hexo"></a>用cnpm安装hexo</h3><ol>
-<li>-g意思为全局安装<blockquote>
-<p>cnpm install -g hexo-cli<br>hexo -v</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="如何初始化个人博客"><a href="#如何初始化个人博客" class="headerlink" title="如何初始化个人博客"></a>如何初始化个人博客</h2><ol>
-<li>启动博客 s:start<blockquote>
-<p>sudo hexo init<br>（可能不需要）npm install hexo-server<br>hexo s</p>
-</blockquote>
-</li>
-<li>这个时候就可以在我们的浏览器打开hexo为我们生成的博客啦：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></li>
-</ol>
-<h2 id="如何写博客"><a href="#如何写博客" class="headerlink" title="如何写博客"></a>如何写博客</h2><ol>
-<li><blockquote>
-<p>hexo n “我的第一篇博客.md”</p>
-</blockquote>
-</li>
-<li>markdown写完之后,g为generate<blockquote>
-<p>hexo clean<br>hexo g<br>hexo s</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="如何把个人博客部署到远端"><a href="#如何把个人博客部署到远端" class="headerlink" title="如何把个人博客部署到远端"></a>如何把个人博客部署到远端</h2><ol>
-<li><p>我们选择把博客部署到GitHub上面去，<a href="https://github.com/" target="_blank" rel="noopener">注册登录Github</a></p>
-</li>
-<li><p>新建一个io仓库，注意，仓库名的是唯一的，不能乱起。（因为我已经创建了，所以会显示警告）<br><img src="../assets/blogImg/08-20_16-13-25.png" alt></p>
-</li>
-<li><p>在blog所在的位置安装一个git的插件</p>
-<blockquote>
-<p>cnpm install –save hexo-deployer-git</p>
-</blockquote>
-</li>
-<li><p>然后需要在_config.yml增加一些属性</p>
-<p><img src="../assets/blogImg/08-20_19-28-13.png" alt></p>
-</li>
-<li><p>这个时候就可以将它部署到远端啦</p>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="如何给个人博客换主题"><a href="#如何给个人博客换主题" class="headerlink" title="如何给个人博客换主题"></a>如何给个人博客换主题</h2><p>这里安装yilia的主题  </p>
-<ol>
-<li><p>把yilia主题clone到本地的 theme文件夹下的yilia文件夹中</p>
-<blockquote>
-<p>clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
-</blockquote>
-</li>
-<li><p>然后同样的需要在_config.yml修改一些配置（将theme设置为yilia）  </p>
-<p><img src="../assets/blogImg/08-20_19-49-48.png" alt></p>
-</li>
-<li><p>然后clean一下，generate一下，最后deploy一下，推到远端</p>
-<blockquote>
-<p>hexo clean<br>hexo g<br>hexo d</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="遇到的其他问题"><a href="#遇到的其他问题" class="headerlink" title="遇到的其他问题"></a>遇到的其他问题</h2><h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>npm 安装参数中的 –save是什么意思？  </p>
-<h4 id="回答1："><a href="#回答1：" class="headerlink" title="回答1："></a>回答1：</h4><p>当你为你的模块安装一个</p>
-<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><p>hexo搭建博客过程中出现4000端口被占用</p>
-<h4 id="解答2："><a href="#解答2：" class="headerlink" title="解答2："></a>解答2：</h4><ol>
-<li>一般情况下，4000端口被占用是因为你开了多个终端，或许你在另一个终端使用了4000端口，你目前正在编辑的终端也是用4000端口；解决方法为：关闭其中一个终端</li>
-<li>另一种解决方法为：使用新的端口打开Hexo，操作为在<code>_config.yml</code>内加上如下代码，从而更改hexo-server运行时的端口号：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span></span><br><span class="line">    compress: <span class="keyword">true</span></span><br><span class="line">    header: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="问题3：can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-at-line-78-column-1"><a href="#问题3：can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-at-line-78-column-1" class="headerlink" title="问题3：can not read a block mapping entry; a multiline key may not be an implicit key at line 78, column 1:"></a>问题3：can not read a block mapping entry; a multiline key may not be an implicit key at line 78, column 1:</h4><h4 id="解答3："><a href="#解答3：" class="headerlink" title="解答3："></a>解答3：</h4><p>无法读取块映射条目；多行键可能不是隐式键；出现这种情况很有可能是修改_config.yml不规范造成的，你要很注意“：”后面有一个空格</p>
-<p><img src="../assets/blogImg/08-20_20-58-14.png" alt></p>
-<h4 id="问题4："><a href="#问题4：" class="headerlink" title="问题4："></a>问题4：</h4><h4 id="问题4-解答4："><a href="#问题4-解答4：" class="headerlink" title="问题4/解答4："></a>问题4/解答4：</h4><p>在hexo init初始化中，出现git的一些错误，怎么解决都无济于事；最后重装了git就成功了</p>
-<h4 id="问题5-解答5："><a href="#问题5-解答5：" class="headerlink" title="问题5/解答5："></a>问题5/解答5：</h4><p>在删除blog文件夹时，出现需要“××权限”才能删除，有可能是因为你vs code打开了它 (＃°Д°)</p>
-<h4 id="问题6-解答6："><a href="#问题6-解答6：" class="headerlink" title="问题6/解答6："></a>问题6/解答6：</h4><p>win + R，切换到D盘：</p>
-<blockquote>
-<p>D:</p>
-</blockquote>
-<h4 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h4><p>不要怕！有虚拟机！错了干掉重来！</p>
-<ol>
-<li>打命令行，慢一点，可以的</li>
-<li>写博客真的可以让自己体会更多！最后再做一个知识地图和总结，真的很完美！</li>
-<li>出现问题：看错误信息 –&gt; 打印一些辅助信息 –&gt;  Degug  –&gt; 网上查</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/搭建自己的博客 copy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-搭建自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -519,6 +329,222 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/21/搭建自己的博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-搭建自己的博客 copy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/搭建自己的博客 copy/">搭建自己的博客</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/搭建自己的博客 copy/" class="archive-article-date">
+  	<time datetime="2019-08-21T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么要搭建自己的博客？"><a href="#为什么要搭建自己的博客？" class="headerlink" title="为什么要搭建自己的博客？"></a>为什么要搭建自己的博客？</h2><p>社招和校招，加分项会比较大点</p>
+<p>搭建自己的博客的好处？</p>
+<p>搭建自己博客如果出现了问题，把文件夹干掉再重来就可以<br>出现了问题，大不了从头再来</p>
+<h2 id="博客框架选择"><a href="#博客框架选择" class="headerlink" title="博客框架选择"></a>博客框架选择</h2><p>hexo</p>
+<p>比较成熟，解决方案很多。</p>
+<p>## </p>
+<p>检查node js是否是否安装成功：  </p>
+<blockquote>
+<p>node -v  </p>
+</blockquote>
+<p><img src="../assets/%E5%91%BD%E4%BB%A4%E8%A1%8C1.png" alt></p>
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><h3 id="需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）"><a href="#需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）" class="headerlink" title="需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）"></a>需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）</h3><ol>
+<li><p>我们用root权限更新一下软件包管理器，输入下面命令后，再输入自己的root密码</p>
+<blockquote>
+<p>sudo apt-get update  </p>
+</blockquote>
+</li>
+<li><p>安装python，gcc,make,g++ ( 这一步需要下载的东西比较多，时间也会久一点，需要大概700M左右的流量 )</p>
+<blockquote>
+<p>apt-get install python gcc make g++</p>
+</blockquote>
+</li>
+<li><p>【建议不要按以下的方法装】然后接下来我们正式来安装node.js，首先我们来到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网的下载专区</a>，然后在下图中红框内，在标有Source Code上右键，复制下载链接</p>
+<p> <img src="../assets/blogImg/08-20_14-43-57.png" alt></p>
+</li>
+<li><p>然后执行下载的命令,(下图的地址为Source Code的下载地址，大家根据刚刚复制的地址，粘贴进去)</p>
+<blockquote>
+<p>wget <a href="https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz" target="_blank" rel="noopener">https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz</a> </p>
+</blockquote>
+</li>
+<li><p>然后解压刚刚下载的Source Code</p>
+<blockquote>
+<p>tar -zxvf node-v10.16.3.tar.gz</p>
+</blockquote>
+</li>
+<li><p>进入到刚刚解压好的node-v10.16.3.tar.gz文件夹中</p>
+<blockquote>
+<p>cd node-v10.16.3</p>
+</blockquote>
+</li>
+<li><p>然后进行“检测平台安装环境”，“编译”，“执行安装” (这里的make,make install要巨久(っ °Д °;)っ)</p>
+<blockquote>
+<p>./configure<br>make<br>sudo make install</p>
+</blockquote>
+</li>
+<li><p>上面的命令行跑完，node.js就安装好啦，这个时候我们来检验一下node.js是否安装好了</p>
+<blockquote>
+<p>node -v<br>npm -v</p>
+</blockquote>
+</li>
+<li><p>npm换淘宝的源cnpm，下载速度会快一点;</p>
+<blockquote>
+<p>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>cnpm -v</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><ol>
+<li><blockquote>
+<p>apt-get install git<br>git –version</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="用cnpm安装hexo"><a href="#用cnpm安装hexo" class="headerlink" title="用cnpm安装hexo"></a>用cnpm安装hexo</h3><ol>
+<li>-g意思为全局安装<blockquote>
+<p>cnpm install -g hexo-cli<br>hexo -v</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="如何初始化个人博客"><a href="#如何初始化个人博客" class="headerlink" title="如何初始化个人博客"></a>如何初始化个人博客</h2><ol>
+<li>启动博客 s:start<blockquote>
+<p>sudo hexo init<br>（可能不需要）npm install hexo-server<br>hexo s</p>
+</blockquote>
+</li>
+<li>这个时候就可以在我们的浏览器打开hexo为我们生成的博客啦：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></li>
+</ol>
+<h2 id="如何写博客"><a href="#如何写博客" class="headerlink" title="如何写博客"></a>如何写博客</h2><ol>
+<li><blockquote>
+<p>hexo n “我的第一篇博客.md”</p>
+</blockquote>
+</li>
+<li>markdown写完之后,g为generate<blockquote>
+<p>hexo clean<br>hexo g<br>hexo s</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="如何把个人博客部署到远端"><a href="#如何把个人博客部署到远端" class="headerlink" title="如何把个人博客部署到远端"></a>如何把个人博客部署到远端</h2><ol>
+<li><p>我们选择把博客部署到GitHub上面去，<a href="https://github.com/" target="_blank" rel="noopener">注册登录Github</a></p>
+</li>
+<li><p>新建一个io仓库，注意，仓库名的是唯一的，不能乱起。（因为我已经创建了，所以会显示警告）<br><img src="../assets/blogImg/08-20_16-13-25.png" alt></p>
+</li>
+<li><p>在blog所在的位置安装一个git的插件</p>
+<blockquote>
+<p>cnpm install –save hexo-deployer-git</p>
+</blockquote>
+</li>
+<li><p>然后需要在_config.yml增加一些属性</p>
+<p><img src="../assets/blogImg/08-20_19-28-13.png" alt></p>
+</li>
+<li><p>这个时候就可以将它部署到远端啦</p>
+<blockquote>
+<p>hexo d</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="如何给个人博客换主题"><a href="#如何给个人博客换主题" class="headerlink" title="如何给个人博客换主题"></a>如何给个人博客换主题</h2><p>这里安装yilia的主题  </p>
+<ol>
+<li><p>把yilia主题clone到本地的 theme文件夹下的yilia文件夹中</p>
+<blockquote>
+<p>clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</blockquote>
+</li>
+<li><p>然后同样的需要在_config.yml修改一些配置（将theme设置为yilia）  </p>
+<p><img src="../assets/blogImg/08-20_19-49-48.png" alt></p>
+</li>
+<li><p>然后clean一下，generate一下，最后deploy一下，推到远端</p>
+<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="遇到的其他问题"><a href="#遇到的其他问题" class="headerlink" title="遇到的其他问题"></a>遇到的其他问题</h2><h4 id="问题1："><a href="#问题1：" class="headerlink" title="问题1："></a>问题1：</h4><p>npm 安装参数中的 –save是什么意思？  </p>
+<h4 id="回答1："><a href="#回答1：" class="headerlink" title="回答1："></a>回答1：</h4><p>当你为你的模块安装一个</p>
+<h4 id="问题2："><a href="#问题2：" class="headerlink" title="问题2："></a>问题2：</h4><p>hexo搭建博客过程中出现4000端口被占用</p>
+<h4 id="解答2："><a href="#解答2：" class="headerlink" title="解答2："></a>解答2：</h4><ol>
+<li>一般情况下，4000端口被占用是因为你开了多个终端，或许你在另一个终端使用了4000端口，你目前正在编辑的终端也是用4000端口；解决方法为：关闭其中一个终端</li>
+<li>另一种解决方法为：使用新的端口打开Hexo，操作为在<code>_config.yml</code>内加上如下代码，从而更改hexo-server运行时的端口号：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span></span><br><span class="line">    compress: <span class="keyword">true</span></span><br><span class="line">    header: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="问题3：can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-at-line-78-column-1"><a href="#问题3：can-not-read-a-block-mapping-entry-a-multiline-key-may-not-be-an-implicit-key-at-line-78-column-1" class="headerlink" title="问题3：can not read a block mapping entry; a multiline key may not be an implicit key at line 78, column 1:"></a>问题3：can not read a block mapping entry; a multiline key may not be an implicit key at line 78, column 1:</h4><h4 id="解答3："><a href="#解答3：" class="headerlink" title="解答3："></a>解答3：</h4><p>无法读取块映射条目；多行键可能不是隐式键；出现这种情况很有可能是修改_config.yml不规范造成的，你要很注意“：”后面有一个空格</p>
+<p><img src="../assets/blogImg/08-20_20-58-14.png" alt></p>
+<h4 id="问题4："><a href="#问题4：" class="headerlink" title="问题4："></a>问题4：</h4><h4 id="问题4-解答4："><a href="#问题4-解答4：" class="headerlink" title="问题4/解答4："></a>问题4/解答4：</h4><p>在hexo init初始化中，出现git的一些错误，怎么解决都无济于事；最后重装了git就成功了</p>
+<h4 id="问题5-解答5："><a href="#问题5-解答5：" class="headerlink" title="问题5/解答5："></a>问题5/解答5：</h4><p>在删除blog文件夹时，出现需要“××权限”才能删除，有可能是因为你vs code打开了它 (＃°Д°)</p>
+<h4 id="问题6-解答6："><a href="#问题6-解答6：" class="headerlink" title="问题6/解答6："></a>问题6/解答6：</h4><p>win + R，切换到D盘：</p>
+<blockquote>
+<p>D:</p>
+</blockquote>
+<h4 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h4><p>不要怕！有虚拟机！错了干掉重来！</p>
+<ol>
+<li>打命令行，慢一点，可以的</li>
+<li>写博客真的可以让自己体会更多！最后再做一个知识地图和总结，真的很完美！</li>
+<li>出现问题：看错误信息 –&gt; 打印一些辅助信息 –&gt;  Degug  –&gt; 网上查</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/21/搭建自己的博客 copy/">展开全文 >></a>
         </p>
       
 
