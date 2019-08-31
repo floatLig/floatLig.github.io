@@ -57,9 +57,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/博客/">博客文章</a></li>
-	        
-				<li><a href="/tags/读书笔记/">读书笔记</a></li>
+				<li><a href="/tags/博客/">博客</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
@@ -72,6 +70,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">读书笔记</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -81,9 +81,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/floatLig" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="/floatLig@foxmail.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:floatLig@foxmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -117,16 +117,14 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/floatLig" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="/floatLig@foxmail.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:floatLig@foxmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -135,13 +133,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/博客/">博客文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/博客/">博客</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/读书笔记/">读书笔记</a></li>
-		        
-					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -290,6 +286,8 @@ MathJax.Hub.Queue(function() {
       
     
       
+      
+      
     
       
       
@@ -301,13 +299,15 @@ MathJax.Hub.Queue(function() {
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">读书笔记</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -382,6 +382,18 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://operating.gitbook.io/operating-syste/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>操作系统</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
