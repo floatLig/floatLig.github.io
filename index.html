@@ -154,6 +154,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用docsify写自己的电子书" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/26/使用docsify写自己的电子书/">使用docsify写自己的电子书</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/26/使用docsify写自己的电子书/" class="archive-article-date">
+  	<time datetime="2019-09-26T05:25:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h1 id="docsify简介"><a href="#docsify简介" class="headerlink" title="docsify简介"></a>docsify简介</h1><h2 id="docsify是什么样的"><a href="#docsify是什么样的" class="headerlink" title="docsify是什么样的"></a>docsify是什么样的</h2><p>首先我们先通过几个网站初步认识一下docsify,我们不用理会内容，只看外观:</p>
+<ul>
+<li><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify</a></li>
+<li><a href="https://docs.snipaste.com/" target="_blank" rel="noopener">Snipaste</a> </li>
+<li><a href="https://book.uchaindb.com/#/" target="_blank" rel="noopener">《区块链系统实现》简介</a> </li>
+</ul>
+<p>如果你想写成像上面的文档、笔记、博客等，那么docsify是一个不错的选择。</p>
+<p>那么如果你想这么做，那么继续往下看吧。</p>
+<blockquote>
+<p><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify官方使用手册</a></p>
+</blockquote>
+<h2 id="需要什么工具"><a href="#需要什么工具" class="headerlink" title="需要什么工具"></a>需要什么工具</h2><ul>
+<li><p>因为我们的目的是通过网址访问我们的电子书页面，所以，我们的电子书可以选择寄放在GitHub上（当然你也可以有你的域名），所以第一点我们需要有一个Giuhub账号。同时用这个Github绑定自己的域名（操作也同样不难，这里不展开讲，自己百度）。  </p>
+</li>
+<li><p>通过以下命令安装docsify-cli</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> docsif-cli -g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="在Github-Page使用docsify"><a href="#在Github-Page使用docsify" class="headerlink" title="在Github Page使用docsify"></a>在Github Page使用docsify</h1><p>生成自己的电子书网站很简单： </p>
+<ol>
+<li>Github Page是一个托管在Github的静态页面，可以作为你的仓库的说明文档。</li>
+<li>docsify同样也可以作为说明文档的一个工具来使用。他的主要作用在于使界面很美观（正如我们上面看过的例子一样）。</li>
+<li>通过Github的io仓库，我们就可以访问自己的网站。</li>
+<li>综上：我们用Github的io仓库来生成我们自己的网站，然后用docsify美化Github Page,这样子我们通过Github的io仓库访问Github Page就可以达到访问自己电子书的目的了。</li>
+</ol>
+<ul>
+<li><p>在Github创建一个新的仓库</p>
+</li>
+<li><p>将该仓库<code>git clone --</code>到本地</p>
+</li>
+<li><p>进入到克隆下来的文件夹里面</p>
+</li>
+<li><p>用<code>docsify init docs</code>创造docs文件夹，初始化docsify</p>
+</li>
+<li><p>使用以下命令</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> .</span><br><span class="line">git commit -m <span class="string">"init docsify"</span></span><br><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过上面命令，我们就将本地的更新内容推送到远端仓库了</p>
+</li>
+<li><p>在该仓库找到以下内容：seting -&gt; Github Page</p>
+<div>
+  <img src="/2019/09/26/使用docsify写自己的电子书/githubPage.png" width="500">
+</div>
+</li>
+<li><p>这样子我们就可以通过上面的网址,就能访问我们的电子书网站了（可能得等10多20分钟<del>~</del>网页没有那么快可以刷新）</p>
+</li>
+</ul>
+<h1 id="开始用docsify写电子书"><a href="#开始用docsify写电子书" class="headerlink" title="开始用docsify写电子书"></a>开始用docsify写电子书</h1><blockquote>
+<p><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify官方使用手册</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">docsify</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/26/使用docsify写自己的电子书/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo-思维导图-极客时间-docsify-githubPage-知识地图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -189,7 +319,18 @@
 
 </li>
 </ul>
-
+<h2 id="思维导图Mindmanager"><a href="#思维导图Mindmanager" class="headerlink" title="思维导图Mindmanager"></a>思维导图Mindmanager</h2><ul>
+<li>Mindmanager软件的破解文件在网盘里面有</li>
+<li>在菜单栏中-发布-开始新的发布</li>
+<li><a href="https://share.mindmanager.com/" target="_blank" rel="noopener">可以在Mindmanager服务器</a>上访问你发布的内容</li>
+</ul>
+<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><ul>
+<li><a href></a></li>
+</ul>
+<h2 id="githubPage"><a href="#githubPage" class="headerlink" title="githubPage"></a>githubPage</h2><ul>
+<li>在你的仓库下-&gt;setting-&gt;</li>
+</ul>
+<h2 id="知识地图"><a href="#知识地图" class="headerlink" title="知识地图"></a>知识地图</h2>
       
 
       
@@ -925,88 +1066,6 @@
 
 
   
-    <article id="post-使用版本控制系统Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/使用版本控制系统Git/">使用版本控制系统Git</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/01/使用版本控制系统Git/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>更多详细内容参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰的Git教程</a></p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2019/09/01/使用版本控制系统Git/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/使用版本控制系统Git/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1134,6 +1193,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">docsify</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -1146,7 +1209,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,7 +1217,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1207,6 +1270,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://operating.gitbook.io/operating-syste/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>操作系统</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://floatlig.github.io/DoLeetcode/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Leetcode</a>
             </li>
           
         </ul>
