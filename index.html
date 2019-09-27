@@ -174,75 +174,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="使用docsify写自己的电子书"><a href="#使用docsify写自己的电子书" class="headerlink" title="使用docsify写自己的电子书"></a>使用docsify写自己的电子书</h1><h2 id="docsify是什么样的"><a href="#docsify是什么样的" class="headerlink" title="docsify是什么样的"></a>docsify是什么样的</h2><p>首先我们先通过几个网站初步认识一下docsify,我们不用理会内容，只看外观:</p>
-<ul>
-<li><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify</a></li>
-<li><a href="https://docs.snipaste.com/" target="_blank" rel="noopener">Snipaste</a> </li>
-<li><a href="https://book.uchaindb.com/#/" target="_blank" rel="noopener">《区块链系统实现》简介</a> </li>
-</ul>
-<p>如果你想写成像上面的文档、笔记、博客等，那么docsify是一个不错的选择。</p>
-<p>那么如果你想这么做，那么继续往下看吧。</p>
-<blockquote>
-<p><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify官方使用手册</a></p>
-</blockquote>
-<h2 id="需要什么工具"><a href="#需要什么工具" class="headerlink" title="需要什么工具"></a>需要什么工具</h2><ul>
-<li><p>我们可以选择将电子书寄放在Github上，所以首先需要注册一个GitHub账号。 </p>
-</li>
-<li><p>通过以下命令安装docsify-cli</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> docsif-cli -g</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="在Github-Page使用docsify"><a href="#在Github-Page使用docsify" class="headerlink" title="在Github Page使用docsify"></a>在Github Page使用docsify</h1><p>生成自己的电子书网站很简单： </p>
-<ol>
-<li>Github Page是一个托管在Github的静态页面，可以作为你的仓库的说明文档。</li>
-<li>docsify同样也可以作为说明文档的一个工具来使用。他的主要作用在于使界面很美观（可以使Github Page变得更加美观，正如我们上面看过的例子一样）。</li>
-<li>通过Github的io仓库（<code>http://&lt;username&gt;.github.io</code>），我们就可以访问自己的网站。</li>
-<li>综上：我们用Github的io仓库（<code>http://&lt;username&gt;.github.io</code>）来生成我们自己的网站，然后用docsify美化Github Page,这样子我们通过Github的io仓库（<code>http://&lt;username&gt;.github.io</code>）访问Github Page就可以达到访问自己电子书的目的了。</li>
-</ol>
-<p><strong>以下是实现的具体步骤</strong></p>
-<ul>
-<li><p>在Github创建一个新的仓库</p>
-</li>
-<li><p>将该仓库<code>git clone --</code>到本地</p>
-</li>
-<li><p>进入到克隆下来的文件夹里面</p>
-</li>
-<li><p>用<code>docsify init docs</code>创造docs文件夹，初始化docsify</p>
-</li>
-<li><p>使用以下命令</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> .</span><br><span class="line">git commit -m <span class="string">"init docsify"</span></span><br><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过上面命令，我们就将本地的更新内容推送到远端仓库了</p>
-</li>
-<li><p>在该仓库找到以下内容：seting -&gt; Github Page</p>
-<div>
-  <img src="/2019/09/26/使用docsify写自己的电子书/githubPage.png" width="500">
-</div>
-</li>
-<li><p>这样子我们就可以通过上面的网址,就能访问我们的电子书网站了（可能得等10多20分钟<del>~</del>网页没有那么快可以刷新）</p>
-</li>
-</ul>
-<h1 id="开始用docsify写电子书"><a href="#开始用docsify写电子书" class="headerlink" title="开始用docsify写电子书"></a>开始用docsify写电子书</h1><p>docsify的官方文档写的很详细，推荐看。</p>
-<blockquote>
-<p><a href="https://docsify.js.org/" target="_blank" rel="noopener">docsify官方使用手册</a></p>
-</blockquote>
-<p><strong>根据docsify的官方文档，文件的修改如下</strong></p>
-<ul>
-<li>index.html（主要更改主页的基本样式）</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge,chrome=1"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Description"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- themes --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//unpkg.com/docsify/lib/themes/vue.css"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- &lt;link rel="stylesheet" href="//unpkg.com/docsify/themes/dark.css"&gt; --&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- A docsify plugin that copies Markdown code block to your clipboard. --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- But it is not work? --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/docsify-copy-code@2"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 左上角 中英文切换 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/"</span>&gt;</span>EN<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#/zh-cn/"</span>&gt;</span>中文<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 加载时显示的内容 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>loading···😊<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.$docsify = &#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//👆封面</span></span></span><br><span class="line"><span class="actionscript">      coverpage: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// multiple covers</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// coverpage: ['/', '/zh-cn/'],</span></span></span><br><span class="line">      </span><br><span class="line"><span class="actionscript">      <span class="comment">//打开默认的主页</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// homepage: 'guide.md',</span></span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">//主色调</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">// themeColor: '#3F51B5'</span></span></span><br><span class="line">      </span><br><span class="line"><span class="actionscript">      <span class="comment">//标题</span></span></span><br><span class="line"><span class="actionscript">      name: <span class="string">'Leetcode Notes'</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// nameLink: '/',</span></span></span><br><span class="line">      </span><br><span class="line"><span class="actionscript">      <span class="comment">//👈左边导航栏</span></span></span><br><span class="line"><span class="actionscript">      loadSidebar: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">      autoHeader: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// maxLevel: 3,</span></span></span><br><span class="line">      subMaxLevel: 3,</span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">//👉右上面导航栏</span></span></span><br><span class="line"><span class="actionscript">      loadNavbar: <span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">      mergeNavbar: <span class="literal">true</span>,</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">//👉绿色小猫跳转到GitHub</span></span></span><br><span class="line"><span class="actionscript">      repo: <span class="string">'https://github.com/floatLig/DoLeetcode'</span>,</span></span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">//不知道是什么东西~</span></span></span><br><span class="line">      alias: &#123;</span><br><span class="line"><span class="actionscript">        <span class="string">'/.*/_sidebar.md'</span>: <span class="string">'/_sidebar.md'</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">//不知道有什么用</span></span></span><br><span class="line"><span class="actionscript">      auto2top: <span class="literal">true</span>,</span></span><br><span class="line">      </span><br><span class="line"><span class="actionscript">      <span class="comment">//👇用于跳转，但是好像没用？</span></span></span><br><span class="line">      pagination: &#123;</span><br><span class="line"><span class="actionscript">      previousText: <span class="string">'上一章节'</span>,</span></span><br><span class="line"><span class="actionscript">      nextText: <span class="string">'下一章节'</span>,</span></span><br><span class="line"><span class="actionscript">      crossChapter: <span class="literal">true</span></span></span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line"><span class="actionscript">      <span class="comment">// 用于复制粘贴，但是好像没用?  docsify-copy-code (defaults)</span></span></span><br><span class="line">      copyCode: &#123;</span><br><span class="line"><span class="actionscript">      buttonText : <span class="string">'Copy to clipboard'</span>,</span></span><br><span class="line"><span class="actionscript">      errorText : <span class="string">'Error'</span>,</span></span><br><span class="line"><span class="actionscript">      successText: <span class="string">'Copied'</span></span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- docsify --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//unpkg.com/docsify/lib/docsify.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- plugins --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 试一下【:100:】  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//unpkg.com/docsify/lib/plugins/emoji.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 调整图片大小【':size=50x100'】 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//unpkg.com/docsify/lib/plugins/zoom-image.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 👇用于跳转下一章，但是好像没用？ --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../dist/docsify-pagination.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>_coverpage.md（封面的设置）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- _coverpage.md --&gt;</span></span><br><span class="line"></span><br><span class="line">😃</span><br><span class="line"></span><br><span class="line"># Leetcode Notes<span class="tag">&lt;<span class="name">small</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- &gt; A magical documentation site generator. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &gt; Now choose, so love. --&gt;</span></span><br><span class="line"></span><br><span class="line">- Recode the reflections of leetcode quesitons.</span><br><span class="line">- Beginning September 26,2019</span><br><span class="line">- Using docsify</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Link --&gt;</span></span><br><span class="line">[GitHub](https://github.com/floatLig/DoLeetcode)</span><br><span class="line"><span class="comment">&lt;!-- [Get Started](#docsify) --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- background image --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ![](_media/bg.png) --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- background color --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- ![color](#f0f0f0) --&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>navbar.md (主要用于)</p>
-</li>
-</ul>
-
+        <img src="/2019/09/26/使用docsify写自己的电子书/icon.svg" width="150">  
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/09/26/使用docsify写自己的电子书/#more">more >></a>
+        
       
 
       
@@ -319,33 +255,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><ul>
-<li>在vs code中用终端命令，创建新的博客<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="built_in">n</span> <span class="string">"博客名字"</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<ul>
-<li><p>本地演示：(推荐先用本地演示查看效果，等所有的效果确定后再一次性推送到远端)  </p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="built_in">s</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">hexo serve</span><br><span class="line"><span class="comment">//在终端摁下Ctrl+C退出本地演示</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>部署到远端（自己是部署到github的个人仓库）  </p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="meta">&amp;&amp; hexo d</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="思维导图Mindmanager"><a href="#思维导图Mindmanager" class="headerlink" title="思维导图Mindmanager"></a>思维导图Mindmanager</h2><ul>
-<li>Mindmanager软件的破解文件在网盘里面有</li>
-<li>在菜单栏中-发布-开始新的发布</li>
-<li><a href="https://share.mindmanager.com/" target="_blank" rel="noopener">可以在Mindmanager服务器</a>上访问你发布的内容</li>
-</ul>
-<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><ul>
-<li><a href></a></li>
-</ul>
-<h2 id="githubPage"><a href="#githubPage" class="headerlink" title="githubPage"></a>githubPage</h2><ul>
-<li>在你的仓库下-&gt;setting-&gt;</li>
-</ul>
-<h2 id="知识地图"><a href="#知识地图" class="headerlink" title="知识地图"></a>知识地图</h2>
+        <img src="/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/Workspace.jpg" width="300">
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/#more">more >></a>
+        
       
 
       
@@ -359,6 +273,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工作空间</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		
 		</ul>
@@ -418,16 +336,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>是，希望则灿能够在我已经走过的路上，探索更遥远的未来。</p>
-<ol>
-<li>暑假开始学编程，然后ACM？或者PS/Office，不要去打暑假工。学车。性格培训？或者美体其中一种。</li>
-<li>暑假要开始了解学校的情况：同乡会优秀的人、快毕业的师兄师姐。以及在大学你需要知道的奖学金、保研、学习、项目等等这些情况。</li>
-<li>开学后，选择一个复利的部门。像筑梦那样子，毕业后可以聚集在一起，而不是像同乡会、市拓那样子就散了。</li>
-<li>找一份兼职，或是勤工俭学/最好是奶茶店、肯德基、家教这些，但是只局限于你大一去做。</li>
-<li>然后大一要吸收我的所有东西，学习方法，搜索，优点等等。</li>
-<li>做好大学4年的初步规划，找准机会出国。去探索一下。</li>
-</ol>
-
+        <img src="/2019/09/22/写给则灿/brother.jpeg" width="200">
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/09/22/写给则灿/#more">more >></a>
+        
       
 
       
@@ -500,46 +413,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="优秀文章参考"><a href="#优秀文章参考" class="headerlink" title="优秀文章参考"></a>优秀文章参考</h1><ul>
-<li>微信公众号：Java技术栈</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247490003&idx=1&sn=443777d718ec58795310ae1f72291625&chksm=eb539ce5dc2415f34350ab8d44f4b5b3caa067e277778f69c090b4551d050d6f7ba0f934a825&mpshare=1&scene=1&srcid=0921SCiIzglAJYX1Xeu36k16&sharer_sharetime=1569035925936&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=cc15759ce68c3c80ed3ed6eb9c7cc0010c2e33dbf2f2a1099570d797b9e97479348acf40fb6340d5beef5dc482fda535a4b3532fecd8e99d2987ba8b78321f284eaad9d4f402e307502fe8e16e77b042&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">IntelliJ IDEA 快捷键终极大全</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247490673&idx=2&sn=ddf3240b36d73da75c4c982331624716&chksm=eb539947dc2410513076fe4ed3b00845636643bf6968dd48ac4a5a0c537685962589bb4514a9&mpshare=1&scene=1&srcid=09216yrf6fiAMOUWbKGniGWw&sharer_sharetime=1569035420321&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=1559c9758c58e71563d0cd63e2d8fae115a2a3f30e5eaa31ecd253ab0edd87f41db0910ecabe5616e8a8a41552ae10252a6817fdab6802d40d1ee23715e184be53e658801e61c31c15fae5e8a06d3225&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">Intellij IDEA 2019 最新乱码解决必杀技</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247485250&idx=1&sn=9e1f270996441094104a06fc909c60f5&chksm=cea24889f9d5c19fbc6024779ca476a3ee141efa457fc86cc8c33a8f06a1c2b1e7b4922426c2&mpshare=1&scene=1&srcid=09211PpBgh9BVd67DGMRGPct&sharer_sharetime=1569035173951&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=1559c9758c58e71573f9e514bce01924c8cabbae8069dd06cad8e6202a9cc65031c62e7696ccb17a24a7fdf8ca659723d1bfcf3e677b23e5f13f15e1d2cf88c0e1283002aa66182e6d3721b280f4f696&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">一文搞懂如何在Intellij IDEA中使用Debug</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&mid=2653199720&idx=2&sn=3903bab004fd4c2d6276d31c709d024e&chksm=8c99efb2bbee66a4bf7328f67b839c6a4970fa1bee0a6868c5647362fe32cb167710c76a4919&mpshare=1&scene=1&srcid=0920ySzaL7TBiI091dZQKJG4&sharer_sharetime=1568983481367&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=abb696fd3dfcc4bab21f84120dfccfbf04cf86e37800176761d3e5bb01dc6ae4f9e51b512320da0da4c1cb9b023e510e7eea1ea1ade590f5ae152af4972cc76c9d4c0e71f1fee018bf8ba5cfa01896d5&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">Intellij IDEA 智能补全的 10 个姿势</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzIxMjE5MTE1Nw==&mid=2653196078&idx=1&sn=ca24136be84a3ff7fd5ca637929426ee&chksm=8c99fdf4bbee74e28a52b86c4b45aadd83eef58e4e675a6090fb87b0eaa3dcf43590f7800c72&mpshare=1&scene=1&srcid=09200TFMMPi92NlWHkdkjl0b&sharer_sharetime=1568983080640&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=90610e7a4a02526c3fdb8e05c6f7765094f72adcb95e730343249d5667e51eeb718cd2fa43e1e4baf9c4b87b5c873d1255ae8d88d4efd36ce43c28d9ca98a6b30bd79af59258bc18f50954b76525f52c&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">IDEA一定要改的8条配置</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjEwMzQ5MA==&mid=2448887459&idx=1&sn=bf50d0ab301f48c4eae595e28be8e83c&chksm=8fb5548eb8c2dd988294a3a377ff8ffce818cc17379d9d2808388b35b6af02e799c17414f522&mpshare=1&scene=1&srcid=0920VDXGhCrQpvqx8dl4ZlTn&sharer_sharetime=1568974705226&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=a00a174091495fb1b18ac4c6cc6f19f1a25f5a68614459dad3eaf4d76d0241ca58c0107fe99f8c19f6d8d81d652e709c90f171838d0dfde5b21d078d477cf5eb6cb642e221224cf4e18c9f9184120b40&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">看源码，我为什么推荐IDEA?</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjEwMzQ5MA==&mid=2448885889&idx=1&sn=aa69c3de3e2b333a2c91e5b92a0386df&chksm=8fb552acb8c2dbbafcf215f58f3164e17332e79b11427f2fb725bcd4288dca80ca23410f851e&mpshare=1&scene=1&srcid=0920RyxvYS8nomgVscQFUmQP&sharer_sharetime=1568969942762&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=90610e7a4a02526c72f4aea3492edf3248b1bc86a0f8ba673fcaf118601ee3f7c34b0da589f43172b8fd4ba9324d5a9bb62201c46696ccee6e425b68ba67fb23499c8503fae8fe6c37ee504a02cc2bbf&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">精选提高开发效率的15个idea插件</a></li>
-</ul>
-<h1 id="IDEA需要更改的配置"><a href="#IDEA需要更改的配置" class="headerlink" title="IDEA需要更改的配置"></a>IDEA需要更改的配置</h1><h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>IntelliJ IDEA的插件安装很简单。在File–Setting中找到下面的界面：</p>
-<div>
-    <img src="/2019/09/21/我的idea修炼之道/插件安装界面.png" width="600">
-</div>
-
-<h3 id="插件大全"><a href="#插件大全" class="headerlink" title="插件大全"></a>插件大全</h3><p><strong>Key promoter X</strong>  </p>
-<p>Key promoter X这款插件适合新手使用。当你鼠标点击一个功能的时候，可以提示你这个操作的快捷键是什么。<br>这样子，你就可以很多熟悉这款软件的快捷功能了。<br>有快捷键的，会提示你快捷键是什么，没有快捷键的，会提示你创建快捷键。</p>
-<p><strong>Alibaba Java Coding Guidelines</strong></p>
-<p>阿里巴巴代码检查插件，当然规范可以参考<a href="https://github.com/alibaba/p3c/blob/master/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E5%8D%8E%E5%B1%B1%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">阿里巴巴Java开发手册</a></p>
-<div>
-    <img src="/2019/09/21/我的idea修炼之道/阿里巴巴Java语法规范插件.png" width="600">
-</div>
-
-<p><strong>ECtranslation</strong></p>
-<p>中文翻译插件</p>
-<h1 id="智能补全"><a href="#智能补全" class="headerlink" title="智能补全"></a>智能补全</h1><p><strong>1. 快速打印输出</strong></p>
-<p>sout : System.out.println();  </p>
-<p><strong>2. 快速定义局部变量</strong></p>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><ol>
-<li>Alt+Insert 生成代码(如get,set方法,构造函数等)   或者右键（Generate） </li>
-<li>fori/sout + Tab  </li>
-<li>Ctrl+Alt+T  生成try catch  或者 Alt+enter </li>
-<li>Ctrl + O 重写方法 （overide）  </li>
-<li>Ctrl + I 实现方法（implement）  </li>
-<li>CTRL+ALT+ left/right 前后导航编辑过的地方 </li>
-<li>Ctrl+Shift+上下键  上下移动代码</li>
-</ol>
-<iframe width="100%" height="100%" src="https://share.mindmanager.com/#publish/AZDcLMaDWufEOrkunqvAVBBg818aG2gTFQUrZXt8"></iframe>
+        <img src="/2019/09/21/我的idea修炼之道/Intellij_Idea.png" width="200">
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/09/21/我的idea修炼之道/#more">more >></a>
+        
       
 
       
@@ -616,9 +494,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div>
-    <img src="/2019/09/18/见贤思其焉，见不贤而内自省也/笑脸.png" width="300">
-</div>
+        <img src="/2019/09/18/见贤思其焉，见不贤而内自省也/笑脸.png" width="300">
+<br><br><br>
         
           <a class="article-more-a" href="/2019/09/18/见贤思其焉，见不贤而内自省也/#more">more >></a>
         
@@ -698,7 +575,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1. </p>
+        <a id="more"></a>
+
+<p>1. </p>
 
       
 
@@ -761,12 +640,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div>
-    <img src="/2019/09/07/我所爱的/爱心.png" width="300">
-</div>
-
-<p>有一个小小的梦想，带着家人一起去旅游！</p>
-
+        <img src="/2019/09/07/我所爱的/爱心.png" width="150">
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/09/07/我所爱的/#more">more >></a>
+        
       
 
       
@@ -839,18 +717,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div>
-    <img src="/2019/09/07/搜索技巧/搜索.jpg" width="500">
-</div>
-
-<!-- TOC -->
-
-<ul>
-<li><a href="#%e6%90%9c%e7%b4%a2%e6%8c%87%e4%bb%a4">搜索指令</a></li>
-<li><a href="#%e6%90%9c%e7%b4%a2%e7%bd%91%e7%ab%99">搜索网站</a></li>
-<li><a href="#%e5%85%b6%e4%bb%96%e7%ab%99%e7%82%b9">其他站点</a></li>
-</ul>
-<!-- /TOC -->
+        <img src="/2019/09/07/搜索技巧/搜索.jpg" width="300">
+<br><br><br>
         
           <a class="article-more-a" href="/2019/09/07/搜索技巧/#more">more >></a>
         
@@ -926,12 +794,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div>
-<img src="/2019/09/04/我的学习方法/好点子.jpg" width="500">
-</div>
-
-<p><strong>1. 态度：不要等一切都准备好了再前行</strong></p>
-<p>如果把一切都准备好了再前行，那我们永远迈不出第一步</p>
+        <img src="/2019/09/04/我的学习方法/好点子.jpg" width="300">
+<br><br><br>
         
           <a class="article-more-a" href="/2019/09/04/我的学习方法/#more">more >></a>
         
@@ -1007,25 +871,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!-- TOC -->
-
-<ul>
-<li><a href="#社交分类">社交分类</a><ul>
-<li><a href="#共情社交">共情社交</a></li>
-<li><a href="#功利社交">功利社交</a></li>
-<li><a href="#区分好共情社交和功利社交">区分好共情社交和功利社交</a></li>
-</ul>
-</li>
-<li><a href="#在社交中我们要怎么做">在社交中，我们要怎么做？</a><ul>
-<li><a href="#不要讨好别人">不要讨好别人</a></li>
-<li><a href="#对事不对人">对事不对人</a></li>
-<li><a href="#减少无关紧要的社交重要的是提升自己">减少无关紧要的社交，重要的是提升自己</a></li>
-<li><a href="#不要主动去得罪别人">不要主动去得罪别人</a></li>
-</ul>
-</li>
-<li><a href="#后记">后记</a></li>
-</ul>
-<!-- /TOC -->
+        <img src="/2019/09/04/认识我的人际关系/friends.jpg" width="300">
+<br><br><br>
         
           <a class="article-more-a" href="/2019/09/04/认识我的人际关系/#more">more >></a>
         
@@ -1212,14 +1059,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">docsify</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1228,11 +1067,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目标</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">docsify</a>
               </li>
             
             <div class="clearfix"></div>
