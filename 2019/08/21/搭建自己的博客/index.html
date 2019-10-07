@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/21/搭建自己的博客/08-20_19-28-13.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/搭建自己的博客/08-20_19-49-48.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/21/搭建自己的博客/08-20_20-58-14.png">
-<meta property="og:updated_time" content="2019-09-27T03:42:05.705Z">
+<meta property="og:updated_time" content="2019-10-07T07:32:50.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建自己的博客">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/21/搭建自己的博客/hexo.svg">
@@ -203,7 +203,6 @@
 </ul>
 <!-- /TOC -->
 
-
 <h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><h3 id="需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）"><a href="#需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）" class="headerlink" title="需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）"></a>需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）</h3><ol>
 <li>我们用root权限更新一下软件包管理器，输入下面命令后，再输入自己的root密码<blockquote>
 <p>sudo apt-get update  </p>
@@ -213,9 +212,9 @@
 <p>apt-get install python gcc make g++</p>
 </blockquote>
 </li>
-<li>【建议不要按以下的方法装】然后接下来我们正式来安装node.js，首先我们来到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网的下载专区</a>，然后在下图中红框内，在标有Source Code上右键，复制下载链接<br> <img src="/2019/08/21/搭建自己的博客/08-20_14-43-57.png" alt></li>
+<li>【建议不要按以下的方法装】然后接下来我们正式来安装node.js，首先我们来到<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node.js官网的下载专区</a>，然后在下图中红框内，在标有Source Code上右键，复制下载链接<br> <img src="/2019/08/21/搭建自己的博客/08-20_14-43-57.png" alt="搭建自己博客"></li>
 <li>然后执行下载的命令,(下图的地址为Source Code的下载地址，大家根据刚刚复制的地址，粘贴进去)<blockquote>
-<p>wget <a href="https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz" target="_blank" rel="noopener">https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz</a> </p>
+<p>wget <a href="https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz" target="_blank" rel="noopener">https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz</a></p>
 </blockquote>
 </li>
 <li>然后解压刚刚下载的Source Code<blockquote>
@@ -270,12 +269,12 @@
 </ol>
 <h2 id="如何把个人博客部署到远端"><a href="#如何把个人博客部署到远端" class="headerlink" title="如何把个人博客部署到远端"></a>如何把个人博客部署到远端</h2><ol>
 <li>我们选择把博客部署到GitHub上面去，<a href="https://github.com/" target="_blank" rel="noopener">注册登录Github</a></li>
-<li>新建一个io仓库，注意，仓库名的是唯一的，不能乱起。（因为我已经创建了，所以会显示警告）<br><img src="/2019/08/21/搭建自己的博客/08-20_16-13-25.png" alt></li>
+<li>新建一个io仓库，注意，仓库名的是唯一的，不能乱起。（因为我已经创建了，所以会显示警告）<br><img src="/2019/08/21/搭建自己的博客/08-20_16-13-25.png" alt="github仓库"></li>
 <li>在blog所在的位置安装一个git的插件<blockquote>
 <p>cnpm install –save hexo-deployer-git</p>
 </blockquote>
 </li>
-<li>然后需要在_config.yml增加一些属性<br><img src="/2019/08/21/搭建自己的博客/08-20_19-28-13.png" alt></li>
+<li>然后需要在_config.yml增加一些属性<br><img src="/2019/08/21/搭建自己的博客/08-20_19-28-13.png" alt="增加属性"></li>
 <li>这个时候就可以将它部署到远端啦<blockquote>
 <p>hexo d</p>
 </blockquote>
@@ -287,7 +286,7 @@
 <p>clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
 </blockquote>
 </li>
-<li>然后同样的需要在_config.yml修改一些配置（将theme设置为yilia）<br><img src="/2019/08/21/搭建自己的博客/08-20_19-49-48.png" alt></li>
+<li>然后同样的需要在_config.yml修改一些配置（将theme设置为yilia）<br><img src="/2019/08/21/搭建自己的博客/08-20_19-49-48.png" alt="-"></li>
 <li>然后clean一下，generate一下，最后deploy一下，推到远端<blockquote>
 <p>hexo clean<br>hexo g<br>hexo d</p>
 </blockquote>
@@ -304,15 +303,17 @@
 <p>hexo搭建博客过程中出现4000端口被占用</p>
 <p><strong>解答2：</strong></p>
 <ol>
-<li>一般情况下，4000端口被占用是因为你开了多个终端，或许你在另一个终端使用了4000端口，你目前正在编辑的终端也是用4000端口；解决方法为：关闭其中一个终端</li>
-<li>另一种解决方法为：使用新的端口打开Hexo，操作为在<code>_config.yml</code>内加上如下代码，从而更改hexo-server运行时的端口号：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span></span><br><span class="line">    compress: <span class="keyword">true</span></span><br><span class="line">    header: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<li><p>一般情况下，4000端口被占用是因为你开了多个终端，或许你在另一个终端使用了4000端口，你目前正在编辑的终端也是用4000端口；解决方法为：关闭其中一个终端</p>
+</li>
+<li><p>另一种解决方法为：使用新的端口打开Hexo，操作为在<code>_config.yml</code>内加上如下代码，从而更改hexo-server运行时的端口号：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">    port: <span class="number">4001</span></span><br><span class="line">    compress: <span class="keyword">true</span></span><br><span class="line">    header: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <p><strong>问题3：can not read a block mapping entry; a multiline key may not be an implicit key at line 78, column 1:</strong></p>
 <p><strong>解答3：</strong>  </p>
 <p>无法读取块映射条目；多行键可能不是隐式键；出现这种情况很有可能是修改_config.yml不规范造成的，你要很注意“：”后面有一个空格</p>
-<p><img src="/2019/08/21/搭建自己的博客/08-20_20-58-14.png" alt></p>
+<p><img src="/2019/08/21/搭建自己的博客/08-20_20-58-14.png" alt="-"></p>
 <p><strong>问题4/解答4：</strong></p>
 <p>在hexo init初始化中，出现git的一些错误，怎么解决都无济于事；最后重装了git就成功了</p>
 <p><strong>问题5/解答5：</strong>  </p>
@@ -322,9 +323,9 @@
 <blockquote>
 <p>D:</p>
 </blockquote>
-<p><strong>问题7</strong></p>
+<p><strong>问题7：</strong></p>
 <p>Hexo常用的命令</p>
-<p><strong>解答7</strong></p>
+<p><strong>解答7:</strong></p>
 <ol>
 <li>启动本地服务器，用于预览主题。默认地址：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> (下面两条的命令效果一样，下同)<blockquote>
 <p>hexo s<br>hexo server</p>
@@ -347,7 +348,7 @@
 </blockquote>
 </li>
 </ol>
-<p><strong>体会</strong></p>
+<p><strong>体会:</strong></p>
 <p>不要怕！有虚拟机！错了干掉重来！</p>
 <ol>
 <li>打命令行，慢一点，可以的</li>
