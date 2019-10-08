@@ -16,7 +16,7 @@
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/Workspace.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/githubPage.png">
-<meta property="og:updated_time" content="2019-09-27T03:27:00.591Z">
+<meta property="og:updated_time" content="2019-10-08T17:13:58.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+思维导图+极客时间+docsify+githubPage+知识地图">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/Workspace.jpg">
@@ -194,20 +194,21 @@
 <!-- /TOC -->
 
 <h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><ul>
-<li>在vs code中用终端命令，创建新的博客<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="built_in">n</span> <span class="string">"博客名字"</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
+<li>在vs code中用终端命令，创建新的博客</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;博客名字&quot;</span><br></pre></td></tr></table></figure>
+
+
 <ul>
-<li><p>本地演示：(推荐先用本地演示查看效果，等所有的效果确定后再一次性推送到远端)  </p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="built_in">s</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">hexo serve</span><br><span class="line"><span class="comment">//在终端摁下Ctrl+C退出本地演示</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>部署到远端（自己是部署到github的个人仓库）  </p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="meta">&amp;&amp; hexo d</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">hexo clean <span class="meta">&amp;&amp; hexo deploy</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>本地演示：(推荐先用本地演示查看效果，等所有的效果确定后再一次性推送到远端)</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line">//或者</span><br><span class="line">hexo serve</span><br><span class="line">//在终端摁下Ctrl+C退出本地演示</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>部署到远端（自己是部署到github的个人仓库）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo d</span><br><span class="line">//或者</span><br><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
 <h2 id="思维导图Mindmanager"><a href="#思维导图Mindmanager" class="headerlink" title="思维导图Mindmanager"></a>思维导图Mindmanager</h2><ul>
 <li>Mindmanager软件的破解文件在网盘里面有</li>
 <li>在菜单栏中-发布-开始新的发布</li>
@@ -216,19 +217,22 @@
 <h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><ul>
 <li><a href="./开始用docsify写电子书">开始用docsify写电子书</a></li>
 </ul>
-<p><strong>docsify常用命令</strong></p>
+<p><strong>docsify常用命令:</strong></p>
 <ul>
-<li><p>docsify:初始化（创建）docs文件夹</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docsify init docs</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>docsify:本地预览</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docsify serve docs</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用git部署到GitHub Page上</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> .</span><br><span class="line">git commit -m <span class="string">"init docsify"</span></span><br><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>docsify:初始化（创建）docs文件夹</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docsify init docs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>docsify:本地预览</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docsify serve docs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用git部署到GitHub Page上</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;init docsify&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
 <h2 id="githubPage"><a href="#githubPage" class="headerlink" title="githubPage"></a>githubPage</h2><ul>
 <li>在你的仓库下-&gt;setting下</li>
 </ul>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/使用版本控制系统Git/git.png">
-<meta property="og:updated_time" content="2019-10-07T07:28:31.490Z">
+<meta property="og:updated_time" content="2019-10-08T17:13:58.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用版本控制系统Git">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/01/使用版本控制系统Git/git.png">
@@ -184,6 +184,34 @@
 <blockquote>
 <p>更多详细内容参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰的Git教程</a></p>
 </blockquote>
+<h2 id="使用Git和Github"><a href="#使用Git和Github" class="headerlink" title="使用Git和Github"></a>使用Git和Github</h2><p>Git和GitHub怎么知道对方是谁呢？SSH充当这个桥梁的角色。</p>
+<p>SSH的工作原理大致过程是：<br>本地端生成公钥私钥；然后将本地端的公钥放到服务端。这样子初始化就完成了。<br>当要登陆的时候，本地端发送一个请求到服务器；这时候服务器向本地端发送一个随机串，本地使用私钥加密随机串，返回加密后的随机串给服务端。<br>服务端用公钥解密随机串，并且返回结果。  </p>
+<blockquote>
+<p>SSH详细原理1：<a href="https://www.jellythink.com/archives/555" target="_blank" rel="noopener">https://www.jellythink.com/archives/555</a><br>SSH详细原理2：<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a></p>
+</blockquote>
+<ul>
+<li>设置Git的user name和email</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxx"</span>  </span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成SSH</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将公钥添加到Github</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">cat id_rsa.pub  </span><br><span class="line">将公钥复制到Github上</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://blog.csdn.net/Wbiokr/article/details/73431199" target="_blank" rel="noopener">git—如何解决The authenticity of host ‘github.com (192.30.255.112)’ can’t be established.</a></p>
+</blockquote>
+<ul>
+<li>测试能够访问</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
 <h2 id="Git的常用命令"><a href="#Git的常用命令" class="headerlink" title="Git的常用命令"></a>Git的常用命令</h2><p>初始化git仓库，通过<code>git init</code>，会在文件下下面自动生成<code>.git文件</code></p>
 <blockquote>
 <p>$ git init  </p>
@@ -376,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git的常用命令"><span class="toc-number">1.</span> <span class="toc-text">Git的常用命令</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Git和Github"><span class="toc-number">1.</span> <span class="toc-text">使用Git和Github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git的常用命令"><span class="toc-number">2.</span> <span class="toc-text">Git的常用命令</span></a></li></ol>
                     </div>
                 </span>
             </div>
