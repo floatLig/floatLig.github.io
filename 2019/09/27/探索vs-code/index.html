@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/27/探索vs-code/images.png">
-<meta property="og:updated_time" content="2019-09-27T04:12:37.230Z">
+<meta property="og:updated_time" content="2019-10-09T09:37:22.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索vs code">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/27/探索vs-code/images.png">
@@ -185,6 +185,32 @@
 <li><a href="https://zhuanlan.zhihu.com/p/54164612" target="_blank" rel="noopener">vs code提高效率有效方法</a></li>
 <li><a href="https://stackoverflow.com/questions/48304195/what-are-u-m-file-markers-in-visual-studio-code" target="_blank" rel="noopener">导航栏中的U和M</a></li>
 </ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li><p>GitLens</p>
+<p>  神器，用Git查看版本的更替</p>
+</li>
+<li><p>IntelliJ IDEA keybindings</p>
+<p>  IDEA的快捷键</p>
+</li>
+<li><p>Markdown All in One</p>
+<p>  能够使用Markdown的快捷键等</p>
+</li>
+<li><p>Markdown TOC</p>
+<p>  生成Markdown的目录，<a href="https://blog.csdn.net/u014171091/article/details/89629634" target="_blank" rel="noopener">如果所有的目录连在同一行的话，要设置Windows的换行格式</a></p>
+</li>
+<li><p>markdownlint</p>
+<p>  用于纠正你Markdwon的语法错误</p>
+</li>
+<li><p>Rainbow Brackets</p>
+<p>  彩虹括号</p>
+</li>
+<li><p>Setting Sync</p>
+<p>  有了这个，你配置过的设置，不用重新设置第二遍（但是，为什么我的用不了＞﹏＜）</p>
+</li>
+</ul>
+<h2 id="setting-json配置"><a href="#setting-json配置" class="headerlink" title="setting.json配置"></a>setting.json配置</h2><p>一开始的setting.json什么都没有，需要自己添加</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">//git bash</span><br><span class="line">"terminal.integrated.shell.windows": "E:/DeveloperSoftware/Git/bin/bash.exe",</span><br><span class="line">//设置为windows的换行规则，这里解决插件“markdown TOC”出现的不换行问题</span><br><span class="line">"files.eol": "\r\n",</span><br><span class="line">//自动保存，在编辑器失去焦点时保存</span><br><span class="line">"files.autoSave": "onFocusChange",</span><br><span class="line">//sync setting令牌</span><br><span class="line">"sync.gist": "c6e7a3093167319acb0182c854dab595",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -341,7 +367,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -526,6 +552,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -539,10 +569,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目标</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
