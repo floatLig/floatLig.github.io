@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/01/MySQL数据库/mysql.png">
-<meta property="og:updated_time" content="2019-10-08T17:13:58.204Z">
+<meta property="og:updated_time" content="2019-10-10T03:55:47.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/01/MySQL数据库/mysql.png">
@@ -202,11 +202,15 @@
 </ul>
 </li>
 <li><a href="#42-dml操作重要">4.2 DML操作(重要)</a><ul>
-<li><a href="#421插入操作insert">4.2.1插入操作：INSERT:</a></li>
-<li><a href="#422-修改操作-update">4.2.2 修改操作 UPDATE:</a></li>
+<li><a href="#421插入操作insert">4.2.1插入操作：INSERT</a></li>
+<li><a href="#422-修改操作-update">4.2.2 修改操作 UPDATE</a></li>
 </ul>
 </li>
 <li><a href="#43-dql操作">4.3 DQL操作</a></li>
+</ul>
+</li>
+<li><a href="#其他操作">其他操作</a><ul>
+<li><a href="#mysql设置添加主键以及自增问题">MySQL设置、添加主键以及自增问题</a></li>
 </ul>
 </li>
 </ul>
@@ -549,6 +553,12 @@
 </ol>
 <p>8.3　查询代码的书写顺序和执行顺序</p>
 <p>查询语句书写顺序：<code>select – from- where- group by- having- order by-limit</code><br>查询语句执行顺序：<code>from - where -group by - having - select - order by-limit</code></p>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><h3 id="MySQL设置、添加主键以及自增问题"><a href="#MySQL设置、添加主键以及自增问题" class="headerlink" title="MySQL设置、添加主键以及自增问题"></a>MySQL设置、添加主键以及自增问题</h3><blockquote>
+<p><a href="https://blog.csdn.net/niaonao/article/details/51006646" target="_blank" rel="noopener">https://blog.csdn.net/niaonao/article/details/51006646</a></p>
+</blockquote>
+<p>将主键设置递增属性</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">modify</span> <span class="keyword">id</span> <span class="built_in">int</span> auto_increment;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -705,7 +715,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最常用命令"><span class="toc-number">1.</span> <span class="toc-text">最常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、数据库概述"><span class="toc-number">2.</span> <span class="toc-text">一、数据库概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据库的安装与配置"><span class="toc-number">3.</span> <span class="toc-text">二、数据库的安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">3.2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录Mysql"><span class="toc-number">3.3.</span> <span class="toc-text">登录Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-number">3.4.</span> <span class="toc-text">卸载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改密码"><span class="toc-number">3.5.</span> <span class="toc-text">修改密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、sql概述"><span class="toc-number">4.</span> <span class="toc-text">三、sql概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、Sql的分类"><span class="toc-number">5.</span> <span class="toc-text">四、Sql的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-DDL-create、-alter、-drop-操作数据库、表、列等"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 DDL(create、 alter、 drop):操作数据库、表、列等</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1操作数据库"><span class="toc-number">5.1.1.</span> <span class="toc-text">4.1.1操作数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2操作数据表"><span class="toc-number">5.1.2.</span> <span class="toc-text">4.1.2操作数据表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-DML操作-重要"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 DML操作(重要)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1插入操作：INSERT"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1插入操作：INSERT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-修改操作-UPDATE"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 修改操作 UPDATE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-DQL操作"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 DQL操作</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#最常用命令"><span class="toc-number">1.</span> <span class="toc-text">最常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、数据库概述"><span class="toc-number">2.</span> <span class="toc-text">一、数据库概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据库的安装与配置"><span class="toc-number">3.</span> <span class="toc-text">二、数据库的安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">3.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">3.2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#登录Mysql"><span class="toc-number">3.3.</span> <span class="toc-text">登录Mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-number">3.4.</span> <span class="toc-text">卸载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改密码"><span class="toc-number">3.5.</span> <span class="toc-text">修改密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、sql概述"><span class="toc-number">4.</span> <span class="toc-text">三、sql概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、Sql的分类"><span class="toc-number">5.</span> <span class="toc-text">四、Sql的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-DDL-create、-alter、-drop-操作数据库、表、列等"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 DDL(create、 alter、 drop):操作数据库、表、列等</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1操作数据库"><span class="toc-number">5.1.1.</span> <span class="toc-text">4.1.1操作数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2操作数据表"><span class="toc-number">5.1.2.</span> <span class="toc-text">4.1.2操作数据表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-DML操作-重要"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 DML操作(重要)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1插入操作：INSERT"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.2.1插入操作：INSERT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-修改操作-UPDATE"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.2.2 修改操作 UPDATE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-DQL操作"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 DQL操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他操作"><span class="toc-number">6.</span> <span class="toc-text">其他操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL设置、添加主键以及自增问题"><span class="toc-number">6.1.</span> <span class="toc-text">MySQL设置、添加主键以及自增问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -874,11 +884,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -891,10 +909,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

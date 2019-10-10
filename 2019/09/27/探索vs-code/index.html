@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/09/27/探索vs-code/images.png">
-<meta property="og:updated_time" content="2019-10-09T09:37:22.942Z">
+<meta property="og:updated_time" content="2019-10-10T04:19:06.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索vs code">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/27/探索vs-code/images.png">
@@ -200,6 +200,7 @@
 </li>
 <li><p>markdownlint</p>
 <p>  用于纠正你Markdwon的语法错误</p>
+<p>  官方文档：<a href="https://github.com/DavidAnson/vscode-markdownlint#configure" target="_blank" rel="noopener">https://github.com/DavidAnson/vscode-markdownlint#configure</a></p>
 </li>
 <li><p>Rainbow Brackets</p>
 <p>  彩虹括号</p>
@@ -208,9 +209,19 @@
 <p>  有了这个，你配置过的设置，不用重新设置第二遍（但是，为什么我的用不了＞﹏＜）</p>
 </li>
 </ul>
-<h2 id="setting-json配置"><a href="#setting-json配置" class="headerlink" title="setting.json配置"></a>setting.json配置</h2><p>一开始的setting.json什么都没有，需要自己添加</p>
+<h2 id="setting-json配置"><a href="#setting-json配置" class="headerlink" title="setting.json配置"></a>setting.json配置</h2><p>一开始的setting.json什么都没有，需要自己添加。</p>
+<p>settign.json是对vs code的个性化设置。<br>在项目根目录新建.vscode文件夹，文件夹中新建settings.json覆盖全局的setings.json文件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">//git bash</span><br><span class="line">"terminal.integrated.shell.windows": "E:/DeveloperSoftware/Git/bin/bash.exe",</span><br><span class="line">//设置为windows的换行规则，这里解决插件“markdown TOC”出现的不换行问题</span><br><span class="line">"files.eol": "\r\n",</span><br><span class="line">//自动保存，在编辑器失去焦点时保存</span><br><span class="line">"files.autoSave": "onFocusChange",</span><br><span class="line">//sync setting令牌</span><br><span class="line">"sync.gist": "c6e7a3093167319acb0182c854dab595",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="其他小技巧"><a href="#其他小技巧" class="headerlink" title="其他小技巧"></a>其他小技巧</h3><h4 id="vscode同时编辑多处文字，批量替换编辑内容"><a href="#vscode同时编辑多处文字，批量替换编辑内容" class="headerlink" title="vscode同时编辑多处文字，批量替换编辑内容"></a>vscode同时编辑多处文字，批量替换编辑内容</h4><blockquote>
+<p><a href="https://blog.csdn.net/woshidamimi0/article/details/84560982" target="_blank" rel="noopener">https://blog.csdn.net/woshidamimi0/article/details/84560982</a></p>
+</blockquote>
+<ul>
+<li>Ctrl+F打开搜索框</li>
+<li>搜索要编辑的内容</li>
+<li>Ctrl+Shift+L可以选中所有的内容</li>
+<li>然后就可以全部替换</li>
+</ul>
 
       
 
@@ -367,7 +378,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他小技巧"><span class="toc-number">2.1.</span> <span class="toc-text">其他小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode同时编辑多处文字，批量替换编辑内容"><span class="toc-number">2.1.1.</span> <span class="toc-text">vscode同时编辑多处文字，批量替换编辑内容</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -536,11 +547,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,10 +572,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
