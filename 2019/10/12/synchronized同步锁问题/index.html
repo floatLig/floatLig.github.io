@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>node.js: 为什么你博客目录无法正常显示？ | floatLig的博客</title>
+  <title>synchronized同步锁问题 | floatLig的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="博客,node.js">
+  <meta name="description" content="线程的同步由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。 最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个syn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js: 为什么你博客目录无法正常显示？">
-<meta property="og:url" content="http://yoursite.com/2019/10/11/node-js-为什么你博客目录无法正常显示？/index.html">
+<meta property="og:title" content="synchronized同步锁问题">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/synchronized同步锁问题/index.html">
 <meta property="og:site_name" content="floatLig的博客">
+<meta property="og:description" content="线程的同步由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。 最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个syn">
 <meta property="og:locale" content="zh-cmn-Hans">
-<meta property="og:updated_time" content="2019-10-11T11:03:05.277Z">
+<meta property="og:updated_time" content="2019-10-11T16:57:03.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js: 为什么你博客目录无法正常显示？">
+<meta name="twitter:title" content="synchronized同步锁问题">
+<meta name="twitter:description" content="线程的同步由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。 最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个syn">
   
     <link rel="alternative" href="/atom.xml" title="floatLig的博客" type="application/atom+xml">
   
@@ -154,27 +156,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-node-js-为什么你博客目录无法正常显示？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-synchronized同步锁问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      node.js: 为什么你博客目录无法正常显示？
+      synchronized同步锁问题
     </h1>
   
 
         
-        <a href="/2019/10/11/node-js-为什么你博客目录无法正常显示？/" class="archive-article-date">
-  	<time datetime="2019-10-11T10:20:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
+        <a href="/2019/10/12/synchronized同步锁问题/" class="archive-article-date">
+  	<time datetime="2019-10-11T16:36:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h2><p>由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。</p>
+<p>最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个synchronized方法，都必须等待当前执行 synchronized方法的线程退出此方法后，才能依次执行。</p>
+<p>但是，非synchronized方法不受影响，不管当前有没有执行synchronized方法，非synchronized方法都可以被多个线程同时执行。</p>
+<p><strong>此外，必须注意，只有同一实例的synchronized方法同一时间只能被一个线程执行，不同实例的synchronized方法是可以并发的。例如，class A定义了synchronized方法sync()，则不同实例a1.sync()和a2.sync()可以同时由两个线程来执行。</strong></p>
+<h2 id="synchronized的基本使用"><a href="#synchronized的基本使用" class="headerlink" title="synchronized的基本使用"></a>synchronized的基本使用</h2><ul>
+<li><p>修饰普通方法</p>
+<p>  普通方法对应的是类的实例，同一个实例的调用不同方法可以同步。</p>
+</li>
+<li><p>修饰静态方法</p>
+<p>  静态方法对应是是类，同一个类的创建不同的实例，调用同一个方法，可以同步。</p>
+</li>
+<li><p>修饰代码块</p>
+<p>  看代码块的位置</p>
+</li>
+</ul>
+<h2 id="在你的代码中"><a href="#在你的代码中" class="headerlink" title="在你的代码中"></a>在你的代码中</h2><p>在Station类中，你同步的是Sale()方法，在main()方法中，你初始化了Station类的两个实例A，B；实际上，这样子并不能实现同步，原因为上面说到的粗体字。</p>
+<p>因此，代码可以这样子修改，保留在main()方法中初始化两个实例A，B；将Sale()提升为static，与此同时，Station类，ticket属性也都应该为static。</p>
+<p>但是，这样子有一个问题，你的name属性不应该使用，应该name不应该为共享属性，而应该是实例A，B的私有属性。</p>
+<p>于是，你可以使用“Thread.setName()”方法去设置<strong>线程本身的名字</strong>，而不是属性。</p>
+
       
 
       
@@ -213,21 +234,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -278,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/11/node-js-为什么你博客目录无法正常显示？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/12/synchronized同步锁问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -292,18 +298,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/11/vs-code-探索/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vs code:探索
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/10/HTML-CSS-JS/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML+CSS+JS</div>
+    <a href="/2019/10/11/node-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node.js：为什么你的博客会缺失node.js模块</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -330,7 +327,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程的同步"><span class="toc-number">1.</span> <span class="toc-text">线程的同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized的基本使用"><span class="toc-number">2.</span> <span class="toc-text">synchronized的基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在你的代码中"><span class="toc-number">3.</span> <span class="toc-text">在你的代码中</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -344,7 +341,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="node-js-为什么你博客目录无法正常显示？" data-title="node.js: 为什么你博客目录无法正常显示？" data-url="http://yoursite.com/2019/10/11/node-js-为什么你博客目录无法正常显示？/"></div>
+	<div class="ds-thread" data-thread-key="synchronized同步锁问题" data-title="synchronized同步锁问题" data-url="http://yoursite.com/2019/10/12/synchronized同步锁问题/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -367,8 +364,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2019/10/11/node-js-为什么你博客目录无法正常显示？/", 
-    sourceId: "node-js-为什么你博客目录无法正常显示？",
+    url: "http://yoursite.com/2019/10/12/synchronized同步锁问题/", 
+    sourceId: "synchronized同步锁问题",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -507,11 +504,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,15 +524,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目标</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,6 +597,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://floatlig.github.io/DoLeetcode/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Leetcode</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://floatlig.github.io/JavaLearning/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>JavaLearning</a>
             </li>
           
         </ul>

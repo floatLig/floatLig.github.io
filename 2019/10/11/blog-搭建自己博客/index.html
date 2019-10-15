@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/10/11/blog-搭建自己博客/08-20_19-28-13.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/11/blog-搭建自己博客/08-20_19-49-48.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/11/blog-搭建自己博客/08-20_20-58-14.png">
-<meta property="og:updated_time" content="2019-10-11T11:29:45.974Z">
+<meta property="og:updated_time" content="2019-10-11T11:44:56.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="blog:搭建自己博客">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/11/blog-搭建自己博客/hexo.svg">
@@ -200,6 +200,7 @@
 <li><a href="#如何把个人博客部署到远端">如何把个人博客部署到远端</a></li>
 <li><a href="#如何给个人博客换主题">如何给个人博客换主题</a></li>
 <li><a href="#遇到的其他问题">遇到的其他问题</a></li>
+<li><a href="#需要注意的问题">需要注意的问题</a></li>
 </ul>
 <!-- /TOC -->
 
@@ -373,6 +374,12 @@
 <li>出现问题：看错误信息 –&gt; 打印一些辅助信息 –&gt;  Degug  –&gt; 网上查</li>
 </ol>
 <hr>
+<h2 id="需要注意的问题"><a href="#需要注意的问题" class="headerlink" title="需要注意的问题"></a>需要注意的问题</h2><ol>
+<li>可以更改”_config.yml”的属性，但是不要<strong>添加</strong>“_config.yml”属性，如果你自己添加属性，在hexo上传的时候，可以不知道如何解析，导致博客访问不了</li>
+<li>为博客起一个好的标题：”关键字写在开头，才方便查找”，如”blog-搭建自己的博客”</li>
+<li>起名字也不要使用”-“,” “（空格）这些，因为会导致转移成”-“</li>
+<li>不要更改”文件的名字”，如果说要更换名字，重新“hexo n “–” “</li>
+</ol>
 
       
 
@@ -487,6 +494,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/10/11/node-js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          node.js：为什么你的博客会缺失node.js模块
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/10/11/docsify-使用docsify写自己的电子书/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">docsify:使用docsify写自己的电子书</div>
@@ -516,7 +532,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#部署环境"><span class="toc-number">1.</span> <span class="toc-text">部署环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）"><span class="toc-number">1.1.</span> <span class="toc-text">需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装git"><span class="toc-number">1.2.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用cnpm安装hexo"><span class="toc-number">1.3.</span> <span class="toc-text">用cnpm安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何初始化个人博客"><span class="toc-number">2.</span> <span class="toc-text">如何初始化个人博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何写博客"><span class="toc-number">3.</span> <span class="toc-text">如何写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何把个人博客部署到远端"><span class="toc-number">4.</span> <span class="toc-text">如何把个人博客部署到远端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何给个人博客换主题"><span class="toc-number">5.</span> <span class="toc-text">如何给个人博客换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到的其他问题"><span class="toc-number">6.</span> <span class="toc-text">遇到的其他问题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#部署环境"><span class="toc-number">1.</span> <span class="toc-text">部署环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需要安装node-js-（通过源码编译安装，注：这种方法用的时间是在是太久了-っ-°Д-°-っ）"><span class="toc-number">1.1.</span> <span class="toc-text">需要安装node.js  （通过源码编译安装，注：这种方法用的时间是在是太久了(っ °Д °;)っ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装git"><span class="toc-number">1.2.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用cnpm安装hexo"><span class="toc-number">1.3.</span> <span class="toc-text">用cnpm安装hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何初始化个人博客"><span class="toc-number">2.</span> <span class="toc-text">如何初始化个人博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何写博客"><span class="toc-number">3.</span> <span class="toc-text">如何写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何把个人博客部署到远端"><span class="toc-number">4.</span> <span class="toc-text">如何把个人博客部署到远端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何给个人博客换主题"><span class="toc-number">5.</span> <span class="toc-text">如何给个人博客换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到的其他问题"><span class="toc-number">6.</span> <span class="toc-text">遇到的其他问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需要注意的问题"><span class="toc-number">7.</span> <span class="toc-text">需要注意的问题</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -693,11 +709,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,15 +729,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">目标</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,6 +802,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://floatlig.github.io/DoLeetcode/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Leetcode</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://floatlig.github.io/JavaLearning/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>JavaLearning</a>
             </li>
           
         </ul>
