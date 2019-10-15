@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 工作空间 | floatLig的博客</title>
+  <title>git:版本控制 | floatLig的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="floatLig的博客">
-<meta property="og:url" content="http://yoursite.com/tags/工作空间/index.html">
+  <meta name="keywords" content="博客,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git:版本控制">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/git-版本控制/index.html">
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/10/11/git-版本控制/git.png">
+<meta property="og:updated_time" content="2019-10-15T03:32:55.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="floatLig的博客">
+<meta name="twitter:title" content="git:版本控制">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/11/git-版本控制/git.png">
   
     <link rel="alternative" href="/atom.xml" title="floatLig的博客" type="application/atom+xml">
   
@@ -152,36 +156,138 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git-版本控制" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/" class="archive-article-date">
-  	<time datetime="2019-09-26T04:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/26/hexo-思维导图-极客时间-docsify-githubPage-知识地图/">hexo+思维导图+极客时间+docsify+githubPage+知识地图</a>
+    <h1 class="article-title" itemprop="name">
+      git:版本控制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/11/git-版本控制/" class="archive-article-date">
+  	<time datetime="2019-10-11T11:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/2019/10/11/git-版本控制/git.png" width="200">
+<br><br><br>
+
+<a id="more"></a>
+
+<blockquote>
+<p>更多详细内容参考<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰的Git教程</a></p>
+</blockquote>
+<h2 id="使用Git和Github"><a href="#使用Git和Github" class="headerlink" title="使用Git和Github"></a>使用Git和Github</h2><p>Git和GitHub怎么知道对方是谁呢？SSH充当这个桥梁的角色。</p>
+<p>SSH的工作原理大致过程是：<br>本地端生成公钥私钥；然后将本地端的公钥放到服务端。这样子初始化就完成了。<br>当要登陆的时候，本地端发送一个请求到服务器；这时候服务器向本地端发送一个随机串，本地使用私钥加密随机串，返回加密后的随机串给服务端。<br>服务端用公钥解密随机串，并且返回结果。  </p>
+<blockquote>
+<p>SSH详细原理1：<a href="https://www.jellythink.com/archives/555" target="_blank" rel="noopener">https://www.jellythink.com/archives/555</a><br>SSH详细原理2：<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a></p>
+</blockquote>
+<ul>
+<li>设置Git的user name和email</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxx"</span>  </span><br><span class="line">git config --global user.email <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成SSH</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"xxx@xxx.com"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将公钥添加到Github</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">cat id_rsa.pub  </span><br><span class="line">将公钥复制到Github上</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://blog.csdn.net/Wbiokr/article/details/73431199" target="_blank" rel="noopener">git—如何解决The authenticity of host ‘github.com (192.30.255.112)’ can’t be established.</a></p>
+</blockquote>
+<ul>
+<li>测试能够访问</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git的常用命令"><a href="#Git的常用命令" class="headerlink" title="Git的常用命令"></a>Git的常用命令</h2><p>初始化git仓库，通过<code>git init</code>，会在文件下下面自动生成<code>.git文件</code></p>
+<blockquote>
+<p>$ git init  </p>
+</blockquote>
+<p>通过<code>git add 文件名</code>，把文件添加到仓库</p>
+<blockquote>
+<p>$ git add readme.txt</p>
+</blockquote>
+<p>通过<code>git commit -m &quot;提交的说明&quot;</code></p>
+<blockquote>
+<p>$ git commit -m “xxx”</p>
+</blockquote>
+<p>说明：为什么Git添加文件需要<code>add</code>,<code>commit</code>一共两步呢？因为<code>commit</code>可以一次提交很多文件，所以你可以多次<code>add</code>不同文件，比如：</p>
+<blockquote>
+<p>$ git add file1.txt<br>$ git add file2.txt file3.txt<br>$ git commit -m “add 3 files.”  </p>
+</blockquote>
+<p><code>git status</code>命令可以让我们时刻掌握仓库当前的状态</p>
+<blockquote>
+<p>$ git status</p>
+</blockquote>
+<p><code>git diff 文件名</code>命令可以让我们看看具体修改了什么内容</p>
+<blockquote>
+<p>$ git diff readme.txt</p>
+</blockquote>
+<p><code>git log</code>或者<code>git log --pretty=oneline</code>命令显示从最近到最远的提交日志,输入<code>q</code>退出去</p>
+<blockquote>
+<p>$ git log<br>&amp; git log –pretty=oneline  </p>
+</blockquote>
+<p>回退到上一个版本，使用<code>git reset --hard HEAD^</code>或者<code>git reset -- hard HEAD-i</code></p>
+<blockquote>
+<p>$ git reset –hard HEAD^<br>$ git reset –hard head~1<br>$ git reset –hard 版本号  </p>
+</blockquote>
+<p>使用<code>git reflog</code>可以查看你的历史版本，配合<code>git reset</code>就可以相当于拥有了时光机了</p>
+<blockquote>
+<p>git reflog</p>
+</blockquote>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixinpay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,25 +297,165 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工作空间</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/11/git-版本控制/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/10/11/docsify-使用docsify写自己的电子书/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          docsify:使用docsify写自己的电子书
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/10/11/vs-code-探索/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vs code:探索</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Git和Github"><span class="toc-number">1.</span> <span class="toc-text">使用Git和Github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git的常用命令"><span class="toc-number">2.</span> <span class="toc-text">Git的常用命令</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="git-版本控制" data-title="git:版本控制" data-url="http://yoursite.com/2019/10/11/git-版本控制/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2019/10/11/git-版本控制/", 
+    sourceId: "git-版本控制",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +483,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
