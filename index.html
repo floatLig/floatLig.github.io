@@ -176,24 +176,9 @@
       
         <h2 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h2><p>由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。</p>
 <p>最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个synchronized方法，都必须等待当前执行 synchronized方法的线程退出此方法后，才能依次执行。</p>
-<p>但是，非synchronized方法不受影响，不管当前有没有执行synchronized方法，非synchronized方法都可以被多个线程同时执行。</p>
-<p><strong>此外，必须注意，只有同一实例的synchronized方法同一时间只能被一个线程执行，不同实例的synchronized方法是可以并发的。例如，class A定义了synchronized方法sync()，则不同实例a1.sync()和a2.sync()可以同时由两个线程来执行。</strong></p>
-<h2 id="synchronized的基本使用"><a href="#synchronized的基本使用" class="headerlink" title="synchronized的基本使用"></a>synchronized的基本使用</h2><ul>
-<li><p>修饰普通方法</p>
-<p>  普通方法对应的是类的实例，同一个实例的调用不同方法可以同步。</p>
-</li>
-<li><p>修饰静态方法</p>
-<p>  静态方法对应是是类，同一个类的创建不同的实例，调用同一个方法，可以同步。</p>
-</li>
-<li><p>修饰代码块</p>
-<p>  看代码块的位置</p>
-</li>
-</ul>
-<h2 id="在你的代码中"><a href="#在你的代码中" class="headerlink" title="在你的代码中"></a>在你的代码中</h2><p>在Station类中，你同步的是Sale()方法，在main()方法中，你初始化了Station类的两个实例A，B；实际上，这样子并不能实现同步，原因为上面说到的粗体字。</p>
-<p>因此，代码可以这样子修改，保留在main()方法中初始化两个实例A，B；将Sale()提升为static，与此同时，Station类，ticket属性也都应该为static。</p>
-<p>但是，这样子有一个问题，你的name属性不应该使用，应该name不应该为共享属性，而应该是实例A，B的私有属性。</p>
-<p>于是，你可以使用“Thread.setName()”方法去设置<strong>线程本身的名字</strong>，而不是属性。</p>
-
+        
+          <a class="article-more-a" href="/2019/10/12/synchronized同步锁问题/#more">more >></a>
+        
       
 
       
@@ -1099,15 +1084,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1116,6 +1093,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1188,6 +1173,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://floatlig.github.io/OperatingSystem/#/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>操作系统</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://floatlig.github.io/computerNetwork_docsify/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>计算机网络</a>
             </li>
           
             <li class="search-li">

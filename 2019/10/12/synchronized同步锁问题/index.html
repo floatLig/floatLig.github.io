@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:description" content="线程的同步由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。 最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个syn">
 <meta property="og:locale" content="zh-cmn-Hans">
-<meta property="og:updated_time" content="2019-10-11T16:57:03.169Z">
+<meta property="og:updated_time" content="2019-10-27T12:26:29.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="synchronized同步锁问题">
 <meta name="twitter:description" content="线程的同步由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。 最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个syn">
@@ -178,6 +178,8 @@
       
         <h2 id="线程的同步"><a href="#线程的同步" class="headerlink" title="线程的同步"></a>线程的同步</h2><p>由于同一进程内的多个线程共享内存空间，在Java中，就是共享实例，当多个线程试图同时修改某个实例的内容时，就会造成冲突，因此，线程必须实现共享互斥，使多线程同步。</p>
 <p>最简单的同步是将一个方法标记为synchronized，对同一个实例来说，任一时刻只能有一个synchronized方法在执行。当一个方法正在执行某个synchronized方法时，其他线程如果想要执行这个实例的任意一个synchronized方法，都必须等待当前执行 synchronized方法的线程退出此方法后，才能依次执行。</p>
+<a id="more"></a>
+
 <p>但是，非synchronized方法不受影响，不管当前有没有执行synchronized方法，非synchronized方法都可以被多个线程同时执行。</p>
 <p><strong>此外，必须注意，只有同一实例的synchronized方法同一时间只能被一个线程执行，不同实例的synchronized方法是可以并发的。例如，class A定义了synchronized方法sync()，则不同实例a1.sync()和a2.sync()可以同时由两个线程来执行。</strong></p>
 <h2 id="synchronized的基本使用"><a href="#synchronized的基本使用" class="headerlink" title="synchronized的基本使用"></a>synchronized的基本使用</h2><ul>
@@ -508,15 +510,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,6 +519,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +599,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://floatlig.github.io/OperatingSystem/#/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>操作系统</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://floatlig.github.io/computerNetwork_docsify/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>计算机网络</a>
             </li>
           
             <li class="search-li">
