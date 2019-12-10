@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/11/vs-code-探索/images.png">
-<meta property="og:updated_time" content="2019-10-11T11:20:47.486Z">
+<meta property="og:updated_time" content="2019-11-20T04:10:46.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vs code:探索">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/11/vs-code-探索/images.png">
@@ -213,6 +213,10 @@
 <p>settign.json是对vs code的个性化设置。<br>在项目根目录新建.vscode文件夹，文件夹中新建settings.json覆盖全局的setings.json文件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">//git bash</span><br><span class="line">"terminal.integrated.shell.windows": "E:/DeveloperSoftware/Git/bin/bash.exe",</span><br><span class="line">//设置为windows的换行规则，这里解决插件“markdown TOC”出现的不换行问题</span><br><span class="line">"files.eol": "\r\n",</span><br><span class="line">//自动保存，在编辑器失去焦点时保存</span><br><span class="line">"files.autoSave": "onFocusChange",</span><br><span class="line">//sync setting令牌</span><br><span class="line">"sync.gist": "c6e7a3093167319acb0182c854dab595",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="配置编程语言的环境"><a href="#配置编程语言的环境" class="headerlink" title="配置编程语言的环境"></a>配置编程语言的环境</h2><h3 id="C和C"><a href="#C和C" class="headerlink" title="C和C++"></a>C和C++</h3><ul>
+<li><a href="https://blog.csdn.net/bat67/article/details/76095813#commentBox" target="_blank" rel="noopener">参考链接</a></li>
+</ul>
+<p>【有一点可能要注意，过多的vscode插件（c和C++）会让这个过程出现一些问题，可以先把无关紧要的插件先删除，后面再添加】</p>
 <h3 id="其他小技巧"><a href="#其他小技巧" class="headerlink" title="其他小技巧"></a>其他小技巧</h3><h4 id="vscode同时编辑多处文字，批量替换编辑内容"><a href="#vscode同时编辑多处文字，批量替换编辑内容" class="headerlink" title="vscode同时编辑多处文字，批量替换编辑内容"></a>vscode同时编辑多处文字，批量替换编辑内容</h4><blockquote>
 <p><a href="https://blog.csdn.net/woshidamimi0/article/details/84560982" target="_blank" rel="noopener">https://blog.csdn.net/woshidamimi0/article/details/84560982</a></p>
 </blockquote>
@@ -379,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#其他小技巧"><span class="toc-number">2.1.</span> <span class="toc-text">其他小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode同时编辑多处文字，批量替换编辑内容"><span class="toc-number">2.1.1.</span> <span class="toc-text">vscode同时编辑多处文字，批量替换编辑内容</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置编程语言的环境"><span class="toc-number">3.</span> <span class="toc-text">配置编程语言的环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C和C"><span class="toc-number">3.1.</span> <span class="toc-text">C和C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他小技巧"><span class="toc-number">3.2.</span> <span class="toc-text">其他小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode同时编辑多处文字，批量替换编辑内容"><span class="toc-number">3.2.1.</span> <span class="toc-text">vscode同时编辑多处文字，批量替换编辑内容</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -556,15 +560,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,14 +589,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">目标</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">驾照</a>
               </li>
              
               <li class="article-tag-list-item">
