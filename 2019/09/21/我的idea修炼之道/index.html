@@ -17,7 +17,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/Intellij_Idea.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/插件安装界面.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/阿里巴巴Java语法规范插件.png">
-<meta property="og:updated_time" content="2019-12-13T09:03:37.297Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE2.png">
+<meta property="og:updated_time" content="2019-12-15T01:24:42.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的idea修炼之道">
 <meta name="twitter:image" content="http://yoursite.com/2019/09/21/我的idea修炼之道/Intellij_Idea.png">
@@ -186,19 +188,22 @@
 <!-- TOC -->
 
 <ul>
-<li><a href="#优秀文章参考">优秀文章参考</a></li>
-<li><a href="#插件">插件</a><ul>
-<li><a href="#插件安装">插件安装</a></li>
-<li><a href="#插件推荐">插件推荐</a></li>
+<li><a href="#01-资料优秀文章参考">0.1. 资料：优秀文章参考</a></li>
+<li><a href="#02-插件站在巨人的肩膀上">0.2. 插件：站在巨人的肩膀上</a><ul>
+<li><a href="#021-插件安装">0.2.1. 插件安装</a></li>
+<li><a href="#022-插件推荐">0.2.2. 插件推荐</a></li>
 </ul>
 </li>
-<li><a href="#其他设置">其他设置</a></li>
-<li><a href="#智能补全">智能补全</a></li>
-<li><a href="#快捷键">快捷键</a></li>
+<li><a href="#03-设置配置idea不得不谈的设置">0.3. 设置&amp;配置：IDEA不得不谈的设置</a></li>
+<li><a href="#04-快更快地使用idea">0.4. 快：更快地使用IDEA</a><ul>
+<li><a href="#041-快捷键">0.4.1. 快捷键</a></li>
+<li><a href="#042-智能补全">0.4.2. 智能补全</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 
-<h2 id="优秀文章参考"><a href="#优秀文章参考" class="headerlink" title="优秀文章参考"></a>优秀文章参考</h2><ul>
+<h2 id="0-1-资料：优秀文章参考"><a href="#0-1-资料：优秀文章参考" class="headerlink" title="0.1. 资料：优秀文章参考"></a>0.1. 资料：优秀文章参考</h2><ul>
 <li>微信公众号：Java技术栈</li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247490003&idx=1&sn=443777d718ec58795310ae1f72291625&chksm=eb539ce5dc2415f34350ab8d44f4b5b3caa067e277778f69c090b4551d050d6f7ba0f934a825&mpshare=1&scene=1&srcid=0921SCiIzglAJYX1Xeu36k16&sharer_sharetime=1569035925936&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=cc15759ce68c3c80ed3ed6eb9c7cc0010c2e33dbf2f2a1099570d797b9e97479348acf40fb6340d5beef5dc482fda535a4b3532fecd8e99d2987ba8b78321f284eaad9d4f402e307502fe8e16e77b042&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">IntelliJ IDEA 快捷键终极大全</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247490673&idx=2&sn=ddf3240b36d73da75c4c982331624716&chksm=eb539947dc2410513076fe4ed3b00845636643bf6968dd48ac4a5a0c537685962589bb4514a9&mpshare=1&scene=1&srcid=09216yrf6fiAMOUWbKGniGWw&sharer_sharetime=1569035420321&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=1559c9758c58e71563d0cd63e2d8fae115a2a3f30e5eaa31ecd253ab0edd87f41db0910ecabe5616e8a8a41552ae10252a6817fdab6802d40d1ee23715e184be53e658801e61c31c15fae5e8a06d3225&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">Intellij IDEA 2019 最新乱码解决必杀技</a></li>
@@ -208,12 +213,12 @@
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjEwMzQ5MA==&mid=2448887459&idx=1&sn=bf50d0ab301f48c4eae595e28be8e83c&chksm=8fb5548eb8c2dd988294a3a377ff8ffce818cc17379d9d2808388b35b6af02e799c17414f522&mpshare=1&scene=1&srcid=0920VDXGhCrQpvqx8dl4ZlTn&sharer_sharetime=1568974705226&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=a00a174091495fb1b18ac4c6cc6f19f1a25f5a68614459dad3eaf4d76d0241ca58c0107fe99f8c19f6d8d81d652e709c90f171838d0dfde5b21d078d477cf5eb6cb642e221224cf4e18c9f9184120b40&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">看源码，我为什么推荐IDEA?</a></li>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjEwMzQ5MA==&mid=2448885889&idx=1&sn=aa69c3de3e2b333a2c91e5b92a0386df&chksm=8fb552acb8c2dbbafcf215f58f3164e17332e79b11427f2fb725bcd4288dca80ca23410f851e&mpshare=1&scene=1&srcid=0920RyxvYS8nomgVscQFUmQP&sharer_sharetime=1568969942762&sharer_shareid=1bfcc99ef12aaea8b1dde0097af37dff&key=90610e7a4a02526c72f4aea3492edf3248b1bc86a0f8ba673fcaf118601ee3f7c34b0da589f43172b8fd4ba9324d5a9bb62201c46696ccee6e425b68ba67fb23499c8503fae8fe6c37ee504a02cc2bbf&ascene=1&uin=OTg4ODk0OTA5&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=L%2FN3JS36zVyb9wVYTZnLb7zp42NpkrFvCbhtd4IDkSmpkc%2BN4iYuAfkndcieEwb9" target="_blank" rel="noopener">精选提高开发效率的15个idea插件</a></li>
 </ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><p>IntelliJ IDEA的插件安装很简单。在File–Setting中找到下面的界面：</p>
+<h2 id="0-2-插件：站在巨人的肩膀上"><a href="#0-2-插件：站在巨人的肩膀上" class="headerlink" title="0.2. 插件：站在巨人的肩膀上"></a>0.2. 插件：站在巨人的肩膀上</h2><h3 id="0-2-1-插件安装"><a href="#0-2-1-插件安装" class="headerlink" title="0.2.1. 插件安装"></a>0.2.1. 插件安装</h3><p>IntelliJ IDEA的插件安装很简单。在File–Setting中找到下面的界面：</p>
 <div>
     <img src="/2019/09/21/我的idea修炼之道/插件安装界面.png" width="600">
 </div>
 
-<h3 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><p><strong>Key promoter X:</strong>  </p>
+<h3 id="0-2-2-插件推荐"><a href="#0-2-2-插件推荐" class="headerlink" title="0.2.2. 插件推荐"></a>0.2.2. 插件推荐</h3><p><strong>Key promoter X:</strong>  </p>
 <p>Key promoter X这款插件适合新手使用。当你鼠标点击一个功能的时候，可以提示你这个操作的快捷键是什么。<br>这样子，你就可以很多熟悉这款软件的快捷功能了。<br>有快捷键的，会提示你快捷键是什么，没有快捷键的，会提示你创建快捷键。</p>
 <p><strong>Alibaba Java Coding Guidelines:</strong></p>
 <p>阿里巴巴代码检查插件，当然规范可以参考<a href="https://github.com/alibaba/p3c/blob/master/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E5%8D%8E%E5%B1%B1%E7%89%88%EF%BC%89.pdf" target="_blank" rel="noopener">阿里巴巴Java开发手册</a></p>
@@ -223,14 +228,13 @@
 
 <p><strong>Translation:</strong></p>
 <p>中文翻译插件</p>
-<h2 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h2><ol>
+<h2 id="0-3-设置-amp-配置：IDEA不得不谈的设置"><a href="#0-3-设置-amp-配置：IDEA不得不谈的设置" class="headerlink" title="0.3. 设置&amp;配置：IDEA不得不谈的设置"></a>0.3. 设置&amp;配置：IDEA不得不谈的设置</h2><h3 id="偏好设置"><a href="#偏好设置" class="headerlink" title="偏好设置"></a>偏好设置</h3><ol>
 <li>更改控制台字体大小：Setting–Editor–Font–Size:15</li>
 <li>忽略大小写设置：<a href="https://blog.csdn.net/u012934325/article/details/70755539" target="_blank" rel="noopener">https://blog.csdn.net/u012934325/article/details/70755539</a></li>
 </ol>
-<h2 id="智能补全"><a href="#智能补全" class="headerlink" title="智能补全"></a>智能补全</h2><p><strong>1. 快速打印输出:</strong></p>
-<p>sout : System.out.println();  </p>
-<p><strong>2. 快速定义局部变量:</strong></p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ol>
+<h3 id="项目工程设置"><a href="#项目工程设置" class="headerlink" title="项目工程设置"></a>项目工程设置</h3><h4 id="run：普通的java代码"><a href="#run：普通的java代码" class="headerlink" title="run：普通的java代码"></a>run：普通的java代码</h4><p><img src="/2019/09/21/我的idea修炼之道/%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE1.png" alt="我的idea修炼之道/运行配置1.png"></p>
+<p><img src="/2019/09/21/我的idea修炼之道/%E8%BF%90%E8%A1%8C%E9%85%8D%E7%BD%AE2.png" alt="我的idea修炼之道/运行配置1.png"></p>
+<h2 id="0-4-快：更快地使用IDEA"><a href="#0-4-快：更快地使用IDEA" class="headerlink" title="0.4. 快：更快地使用IDEA"></a>0.4. 快：更快地使用IDEA</h2><h3 id="0-4-1-快捷键"><a href="#0-4-1-快捷键" class="headerlink" title="0.4.1. 快捷键"></a>0.4.1. 快捷键</h3><ol>
 <li>属性重命名： Shift + F6</li>
 <li>生成代码(如get,set方法,构造函数等)：右键（Generate）或者 Alt+Insert</li>
 <li>fori/sout + Tab  </li>
@@ -240,6 +244,9 @@
 <li>前后导航编辑过的地方： CTRL+ALT+ left/right</li>
 <li>上下移动代码： Ctrl+Shift+上下键</li>
 </ol>
+<h3 id="0-4-2-智能补全"><a href="#0-4-2-智能补全" class="headerlink" title="0.4.2. 智能补全"></a>0.4.2. 智能补全</h3><p><strong>1. 快速打印输出:</strong></p>
+<p>sout : System.out.println();  </p>
+<p><strong>2. 快速定义局部变量:</strong></p>
 
       
 
@@ -396,7 +403,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#优秀文章参考"><span class="toc-number">1.</span> <span class="toc-text">优秀文章参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">2.</span> <span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插件安装"><span class="toc-number">2.1.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件推荐"><span class="toc-number">2.2.</span> <span class="toc-text">插件推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他设置"><span class="toc-number">3.</span> <span class="toc-text">其他设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能补全"><span class="toc-number">4.</span> <span class="toc-text">智能补全</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">5.</span> <span class="toc-text">快捷键</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-1-资料：优秀文章参考"><span class="toc-number">1.</span> <span class="toc-text">0.1. 资料：优秀文章参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-2-插件：站在巨人的肩膀上"><span class="toc-number">2.</span> <span class="toc-text">0.2. 插件：站在巨人的肩膀上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-2-1-插件安装"><span class="toc-number">2.1.</span> <span class="toc-text">0.2.1. 插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0-2-2-插件推荐"><span class="toc-number">2.2.</span> <span class="toc-text">0.2.2. 插件推荐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-3-设置-amp-配置：IDEA不得不谈的设置"><span class="toc-number">3.</span> <span class="toc-text">0.3. 设置&amp;配置：IDEA不得不谈的设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#偏好设置"><span class="toc-number">3.1.</span> <span class="toc-text">偏好设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目工程设置"><span class="toc-number">3.2.</span> <span class="toc-text">项目工程设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#run：普通的java代码"><span class="toc-number">3.2.1.</span> <span class="toc-text">run：普通的java代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-4-快：更快地使用IDEA"><span class="toc-number">4.</span> <span class="toc-text">0.4. 快：更快地使用IDEA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-4-1-快捷键"><span class="toc-number">4.1.</span> <span class="toc-text">0.4.1. 快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0-4-2-智能补全"><span class="toc-number">4.2.</span> <span class="toc-text">0.4.2. 智能补全</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -581,7 +588,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +600,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
