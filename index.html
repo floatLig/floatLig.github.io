@@ -174,17 +174,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是JavaSE 1.3新增加的特性。利用代理可以<code>在运行时</code>创建一个<code>实现了一组给定接口的新类</code>。这种功能，只有在编译时无法确定需要实现哪个接口时才有必要使用。</p>
-<p>假设有一个<code>表示接口</code>的Class对象（有可能只包含一个接口 ）,它的<code>确切类型</code>在编译时无法知道。要想构造一个实现这些接口的类，这确实有些难度。【因为我不知道它的确切类型】，这时就需要使用<code>newlnstance方法或反射找出这个类的构造器</code>。但是，因为Java<code>不能实例化一个接口</code>，需要在程序处于运行状态时<code>定义一个新类</code>。</p>
+        <p>代理机制是JavaSE 1.3新增加的特性。利用代理机制可以<code>在运行时</code> 创建一个 <code>实现了一组给定接口的新类</code>。</p>
+<p>spring的IoC也是用了代理来实现<code>解耦【在编译期间减少类和类之间的依赖】</code>，也可以在编译时无法确定需要实现哪个接口时使用。</p>
+<p>假设有一个<code>表示接口</code>的Class对象（有可能只包含一个接口 ）,它的<code>确切类型</code>在编译时无法知道。因为我不知道它的确切类型，所以要想构造一个实现这些接口的类（设为类A），不能简单的new出来。那能怎么做呢？利用反射！使用<code>newlnstance方法或反射找出这个类的构造器</code>。但是，因为Java<code>不能实例化一个接口</code>，需要在程序处于运行状态时<code>定义一个新类【即代理类】</code>，然后在这个新类【代理类】的方法中执行。</p>
 <p>为了解决这个问题，有些程序将会生成代码，将这些代码放在一个文件中，调用编译器，然后再加载结果类文件。很自然，这样做的速度会比较慢，并且需要将编译器与程序放在一起。而代理机制则是一种更好的解决方案。<code>代理类可以在运行时创建全新的类</code>。这样的代理类能够实现指定的接口。尤其是，它具有下列方法：</p>
 <ul>
 <li>指定接口所需要的全部方法。</li>
 <li>Object类中的全部方法，例如，toString, equals等</li>
 </ul>
-<p>然而，不能在运行时定义这些方法的新代码。而是要提供一个<code>调用处理器（invocation handler）</code>,调用处理器是实现了InvocationHandler接口的类对象。在这个接口中只有一个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object proxy, Method mettiod, Object[] args)</span></span></span><br></pre></td></tr></table></figure>
+<p>然而，要实现这样子的代理类，是要提供一个<code>调用处理器（invocation handler）</code>,因为不能在运行时定义新代码。</p>
+<p>调用处理器是实现了InvocationHandler接口的类对象。在这个接口中只有一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> class AccountServiceImpl implements AccountService </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里不要在意类的名字，而是注意void,int这些返回类型，有无参数它们的AOP怎么写。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savaAccount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"保存"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateAccount</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"更新"</span> + i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteAccount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"删除"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br></pre></td></tr></table></figure>
 
-<p>无论何时调用代理对象的方法，调用处理器的invoice方法都会被调用T并向其传递Method 对象和原始的调用#数，调用处理器必须给出处理调用的方式。<br>C<br>要想创建一个代理对象，需要使用Proxy类的newPmxylnstance方法a这个方法冇三个参数： 个类加载器（class loader)。作为Java安全模型的一部分，財于系统类和从因特网上下<br>载下来的类，可以使用不同的类加栽器6有关类加栽器的详细内容将在卷〗1第9卓:中讨论。<br>目前，用mill表示使用默认的类加载器。<br>•—个Class对象数组，每个元素都是需要实现的接口。</p>
+<p>调用代理对象任何的方法，调用处理器InvocationHandler的invoke方法会被调用执行。invoke方法表示：无论外界要执行什么方法，都必须经过invoke()方法，而外界的方法method保存在Method对象中，方法的参数保存在Object[]中。</p>
+<p>那怎么创建一个代理对象呢？需要使用Proxy类的newPmxylnstance方法。这个方法冇三个参数： 类加载器（class loader)。作为Java安全模型的一部分，对于系统类和从因特网上下载下来的类，可以使用不同的类加栽器<br>目前，用null表示使用默认的类加载器。<br>•一个Class对象数组，每个元素都是需要实现的接口。</p>
 <ul>
 <li>一个调用处理器。<br>还有两个需要解决的N题。如何定义一个处理器？能够用结果代理对象做些什么？当然， 这两个问题的答案取决干打算使用代理机制解决什么问题&amp;使用代理可能出于很多原因，例如：</li>
 <li>路由对远程服务器的方法调用^<br>•在程序运行期间，将用户接口事件与动作关联起来c</li>
@@ -203,11 +206,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		
 		</ul>
@@ -286,11 +289,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公开课</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公开课</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -1088,23 +1091,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,7 +1103,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1120,11 +1115,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信公开课</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信公开课</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
               </li>
              
               <li class="article-tag-list-item">

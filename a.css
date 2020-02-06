@@ -1072,17 +1072,13 @@ html {
 
 .article-entry .highlight,
 .article-entry pre {
-    background: #2b2b2b;
+    background: #272822;
     margin: 10px 0;
     padding: 10px;
     overflow: auto;
     color: #fff;
     font-size: .9em;
-    line-height: 22.400000000000002px;
-    /* 自己修改 */
-    background: #2d2d2d;
-    font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
-    border: 0 !important;
+    line-height: 22.400000000000002px
 }
 
 .article-entry .gist .gist-file .gist-data .line-numbers,
@@ -1159,9 +1155,7 @@ html {
 }
 
 .article-entry .highlight .line {
-    /* color: #fff; */
-    /* 自己修改 */
-    color: #cccccc;
+    color: #fff;
     min-height: 19px
 }
 
@@ -1170,7 +1164,7 @@ html {
     border-style: solid;
     border-color: #ddd;
     border-width: 1px 0;
-    background: #2b2b2b;
+    background: #272822;
     padding: 15px 20px 15px 0
 }
 
@@ -1202,7 +1196,7 @@ html {
 }
 
 .article-entry .gist .gist-file .gist-meta {
-    background: #2b2b2b;
+    background: #272822;
     color: highlight-comment;
     font: .85em Helvetica Neue, Helvetica, Arial, sans-serif;
     text-shadow: 0 0;
@@ -1221,17 +1215,13 @@ html {
 }
 
 pre .comment {
-    /* color: #75715e */
-    /* 自己修改 */
-    color: #999999;
+    color: #75715e
 }
 
 pre .class .params,
 pre .function .keyword,
 pre .keyword {
-    /* color: #66d9ef */
-    /* 自己修改 */
-    color: #cc99cc
+    color: #66d9ef
 }
 
 pre .css .value,
@@ -1239,23 +1229,7 @@ pre .doctype,
 pre .function,
 pre .params,
 pre .tag {
-    /* color: #fff */
-    /* 自己修改 */
-    color: #cccccc;
-}
-
-pre .params {
-    /* 自己修改 */
-    color: #cccccc
-}
-
-pre .title {
-    /* 自己修改 */
-    color: #66cccc
-}
-
-pre .function {
-    color: #6699cc;
+    color: #fff
 }
 
 pre .at_rule,
@@ -1272,22 +1246,16 @@ pre .built_in,
 pre .class,
 pre .css~* .class,
 pre .function .title {
-    /* color: #a6e22e */
-    /* 自己修改 */
-    color: #66cccc;
+    color: #a6e22e
 }
 
 pre .string,
 pre .value {
-    /* color: #e6db74 */
-    /* 自己修改 */
-    color: #99cc99;
+    color: #e6db74
 }
 
 pre .number {
-    /* color: #7163d7 */
-    /* 自己修改 */
-    color: #F99157;
+    color: #7163d7
 }
 
 pre .css~* .id,
@@ -2341,12 +2309,11 @@ pre .id {
 .article-entry p code {
     padding: 1px 3px;
     margin: 0 3px;
-    background: #f8f8f8;
-    border: 0px solid #ccc;
+    background: #ddd;
+    border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
-    font-size: 14px;
-    color: #f36d00;
+    font-size: 14px
 }
 
 .article-entry blockquote {
@@ -4185,57 +4152,3 @@ a.pswp__share--download:hover {
     color: #ccc;
     text-decoration: underline
 }
-
-
-/* 自己修改 */
-
-
-/* 文章中的超链接,鼠标悬浮特效*/
-
-.article-entry a {
-    display: inline-block;
-    position: relative;
-    color: #0087ca;
-    font-family: lucida console;
-    /* 这种字体的英文比较好看（像代码样式） */
-}
-
-
-/* 鼠标悬浮时，变色 */
-
-.article-entry a:hover {
-    color: #e96900;
-    transition: .8s;
-}
-
-
-/* 鼠标悬浮时，下划线从中间向两边延伸 */
-
-.article-entry a:hover::after {
-    transform: scaleX(1);
-    /* 旋转，与transform连用；这里作用：鼠标悬浮时，底部的下划线从中间扩散到两边。
-   bottom right :左到右出现，左到右消失（需配合上面的::after）
-  */
-    transform-origin: bottom center;
-}
-
-
-/* 鼠标移开后，下划线从两边向中间消失 */
-
-.article-entry a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1.5px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    /* 详见：https://www.w3school.com.cn/cssref/pr_transform-origin.asp,
-  旋转，与transform连用；这里作用：鼠标移开后，底部的下划线从中间开始消失 */
-    transform-origin: bottom center;
-    transition: transform 0.5s ease-out;
-}
-
-
-/* 代码高亮 */
