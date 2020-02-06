@@ -15,7 +15,8 @@
 <meta property="og:site_name" content="floatLig的博客">
 <meta property="og:locale" content="zh-cmn-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/10/11/vs-code-探索/images.png">
-<meta property="og:updated_time" content="2019-11-20T04:10:46.353Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/11/vs-code-探索/settingjson配置.jpg">
+<meta property="og:updated_time" content="2020-01-25T07:14:58.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vs code:探索">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/11/vs-code-探索/images.png">
@@ -209,7 +210,9 @@
 <p>  有了这个，你配置过的设置，不用重新设置第二遍（但是，为什么我的用不了＞﹏＜）</p>
 </li>
 </ul>
-<h2 id="setting-json配置"><a href="#setting-json配置" class="headerlink" title="setting.json配置"></a>setting.json配置</h2><p>一开始的setting.json什么都没有，需要自己添加。</p>
+<h2 id="setting-json配置"><a href="#setting-json配置" class="headerlink" title="setting.json配置"></a>setting.json配置</h2><p>一开始的setting.json什么都没有，需要自己添加。可以在设置里面找到全局的setting.json配置</p>
+<img src="/2019/10/11/vs-code-探索/settingjson配置.jpg">
+
 <p>settign.json是对vs code的个性化设置。<br>在项目根目录新建.vscode文件夹，文件夹中新建settings.json覆盖全局的setings.json文件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">//git bash</span><br><span class="line">"terminal.integrated.shell.windows": "E:/DeveloperSoftware/Git/bin/bash.exe",</span><br><span class="line">//设置为windows的换行规则，这里解决插件“markdown TOC”出现的不换行问题</span><br><span class="line">"files.eol": "\r\n",</span><br><span class="line">//自动保存，在编辑器失去焦点时保存</span><br><span class="line">"files.autoSave": "onFocusChange",</span><br><span class="line">//sync setting令牌</span><br><span class="line">"sync.gist": "c6e7a3093167319acb0182c854dab595",</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -227,6 +230,9 @@
 <li>然后就可以全部替换</li>
 </ul>
 <hr>
+<h2 id="vscode快捷键"><a href="#vscode快捷键" class="headerlink" title="vscode快捷键"></a>vscode快捷键</h2><ol>
+<li>【idea快捷键下】：ctrl + P 命令窗口</li>
+</ol>
 
       
 
@@ -383,7 +389,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置编程语言的环境"><span class="toc-number">3.</span> <span class="toc-text">配置编程语言的环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C和C"><span class="toc-number">3.1.</span> <span class="toc-text">C和C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他小技巧"><span class="toc-number">3.2.</span> <span class="toc-text">其他小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode同时编辑多处文字，批量替换编辑内容"><span class="toc-number">3.2.1.</span> <span class="toc-text">vscode同时编辑多处文字，批量替换编辑内容</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">1.</span> <span class="toc-text">插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-json配置"><span class="toc-number">2.</span> <span class="toc-text">setting.json配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置编程语言的环境"><span class="toc-number">3.</span> <span class="toc-text">配置编程语言的环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C和C"><span class="toc-number">3.1.</span> <span class="toc-text">C和C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他小技巧"><span class="toc-number">3.2.</span> <span class="toc-text">其他小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vscode同时编辑多处文字，批量替换编辑内容"><span class="toc-number">3.2.1.</span> <span class="toc-text">vscode同时编辑多处文字，批量替换编辑内容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vscode快捷键"><span class="toc-number">4.</span> <span class="toc-text">vscode快捷键</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -443,7 +449,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 昨晚的咖啡
+    		&copy; 2020 昨晚的咖啡
     	</div>
 
 		<!-- 访客 -->
@@ -560,11 +566,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,7 +574,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,15 +590,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信公开课</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
+                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
               </li>
              
               <li class="article-tag-list-item">

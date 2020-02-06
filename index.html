@@ -154,6 +154,182 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-代理机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/06/Java-代理机制/">Java-代理机制</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/06/Java-代理机制/" class="archive-article-date">
+  	<time datetime="2020-02-06T14:23:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是JavaSE 1.3新增加的特性。利用代理可以<code>在运行时</code>创建一个<code>实现了一组给定接口的新类</code>。这种功能，只有在编译时无法确定需要实现哪个接口时才有必要使用。</p>
+<p>假设有一个<code>表示接口</code>的Class对象（有可能只包含一个接口 ）,它的<code>确切类型</code>在编译时无法知道。要想构造一个实现这些接口的类，这确实有些难度。【因为我不知道它的确切类型】，这时就需要使用<code>newlnstance方法或反射找出这个类的构造器</code>。但是，因为Java<code>不能实例化一个接口</code>，需要在程序处于运行状态时<code>定义一个新类</code>。</p>
+<p>为了解决这个问题，有些程序将会生成代码，将这些代码放在一个文件中，调用编译器，然后再加载结果类文件。很自然，这样做的速度会比较慢，并且需要将编译器与程序放在一起。而代理机制则是一种更好的解决方案。<code>代理类可以在运行时创建全新的类</code>。这样的代理类能够实现指定的接口。尤其是，它具有下列方法：</p>
+<ul>
+<li>指定接口所需要的全部方法。</li>
+<li>Object类中的全部方法，例如，toString, equals等</li>
+</ul>
+<p>然而，不能在运行时定义这些方法的新代码。而是要提供一个<code>调用处理器（invocation handler）</code>,调用处理器是实现了InvocationHandler接口的类对象。在这个接口中只有一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object proxy, Method mettiod, Object[] args)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>无论何时调用代理对象的方法，调用处理器的invoice方法都会被调用T并向其传递Method 对象和原始的调用#数，调用处理器必须给出处理调用的方式。<br>C<br>要想创建一个代理对象，需要使用Proxy类的newPmxylnstance方法a这个方法冇三个参数： 个类加载器（class loader)。作为Java安全模型的一部分，財于系统类和从因特网上下<br>载下来的类，可以使用不同的类加栽器6有关类加栽器的详细内容将在卷〗1第9卓:中讨论。<br>目前，用mill表示使用默认的类加载器。<br>•—个Class对象数组，每个元素都是需要实现的接口。</p>
+<ul>
+<li>一个调用处理器。<br>还有两个需要解决的N题。如何定义一个处理器？能够用结果代理对象做些什么？当然， 这两个问题的答案取决干打算使用代理机制解决什么问题&amp;使用代理可能出于很多原因，例如：</li>
+<li>路由对远程服务器的方法调用^<br>•在程序运行期间，将用户接口事件与动作关联起来c</li>
+<li>为调试，跟踪方法调用。<br>在列举的示例中，使用代理和调用处理器跟踪方法调用，并辻定义了一个TraceHander包装 器类存储包装的对象&amp;其中的invoke方法打印出被调用方法的名字和参数，随后用包装好的对 象作为隐式参数调用这个方法.</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/06/Java-代理机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-微信公开课-记录与思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/09/微信公开课-记录与思考/">微信公开课-记录与思考</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/09/微信公开课-记录与思考/" class="archive-article-date">
+  	<time datetime="2020-01-09T09:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-2020微信公开课PRO"><a href="#1-2020微信公开课PRO" class="headerlink" title="1. 2020微信公开课PRO"></a>1. 2020微信公开课PRO</h2><h3 id="1-1-张小龙：信息互联的7个思考"><a href="#1-1-张小龙：信息互联的7个思考" class="headerlink" title="1.1 张小龙：信息互联的7个思考"></a>1.1 张小龙：信息互联的7个思考</h3><p>可能从来没有这么一个时代，每天有数亿人花这么多时间，花在手机里面浏览信息。而微信，可能是人们花时间最多的应用。</p>
+<p>所以我也经常会思考，微信作为一个基础的信息传递的工具或者平台，我们一个不经意的动作，可能会引起信息洪流的流向的变化。</p>
+<p>人们视觉上看到的信息，超过了现实中眼睛看到的信息，人们看到的是远方的图像，听到的是远方的声音。从前一个人的世界他的大小，是由他的脚的行走半径来决定的，<code>而现在一个人世界的大小，是由他获得信息的宽广度来决定的</code>。</p>
+<p>信息的宽广度和质量，一直是微信要解决的问题。但人类对信息的广泛连接带来的影响的思考，是落后于网络的发展速度的。网络的发展，尤其是最近几年互联网的发展，使得人人都随时在线，并且面临海量的信息。这在历史上，甚至是十年前，都是难以想象的，人们真的能驾驭这种信息互联吗？</p>
+<h3 id="毕导：永远年轻，永远好奇"><a href="#毕导：永远年轻，永远好奇" class="headerlink" title="毕导：永远年轻，永远好奇"></a>毕导：永远年轻，永远好奇</h3><p><a href="https://daxuepc.com/detail/v_5e181ced0431b_IOeBE563/3?from=p_5e16e674e326a_ULiaHi9C&type=6" target="_blank" rel="noopener">毕导：永远年轻，永远好奇</a></p>
+<p>从生活中的小事，永远年轻，永远好奇，永远探索。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公开课</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/09/微信公开课-记录与思考/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-精神旗帜-毛概" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -789,168 +965,6 @@
 
 
   
-    <article id="post-git-版本控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/git-版本控制/">git:版本控制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/git-版本控制/" class="archive-article-date">
-  	<time datetime="2019-10-11T11:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/10/11/git-版本控制/git.png" width="200">
-<br><br><br>
-        
-          <a class="article-more-a" href="/2019/10/11/git-版本控制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/git-版本控制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vs-code-探索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/vs-code-探索/">vs code:探索</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/vs-code-探索/" class="archive-article-date">
-  	<time datetime="2019-10-11T11:20:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/10/11/vs-code-探索/images.png" width="200">
-<br><br><br>
-        
-          <a class="article-more-a" href="/2019/10/11/vs-code-探索/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vs code</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/vs-code-探索/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -965,7 +979,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 昨晚的咖啡
+    		&copy; 2020 昨晚的咖啡
     	</div>
 
 		<!-- 访客 -->
@@ -1082,11 +1096,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,7 +1104,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,15 +1120,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信公开课</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
+                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
               </li>
              
               <li class="article-tag-list-item">
