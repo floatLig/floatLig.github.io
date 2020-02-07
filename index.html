@@ -154,6 +154,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Guider-CS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/07/Guider-CS/">Guider-CS</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/07/Guider-CS/" class="archive-article-date">
+  	<time datetime="2022-02-07T06:33:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>【<strong>置顶</strong>】记录自己学习Computer Science知识点。这篇是这些<code>知识点的索引</code>！</p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#☕️-java">☕️ Java</a></li>
+<li><a href="#☁️-计算机网络">☁️ 计算机网络</a></li>
+<li><a href="#💻-操作系统">💻 操作系统</a></li>
+<li><a href="#💾-数据库">💾 数据库</a></li>
+<li><a href="#🔧-工具">🔧 工具</a></li>
+<li><a href="#📖-书籍">📖 书籍</a></li>
+</ul>
+<!-- /TOC -->
+        
+          <a class="article-more-a" href="/2022/02/07/Guider-CS/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/07/Guider-CS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java-代理机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,26 +269,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>代理机制是JavaSE 1.3新增加的特性。利用代理机制可以<code>在运行时</code> 创建一个 <code>实现了一组给定接口的新类</code>。</p>
-<p>spring的IoC也是用了代理来实现<code>解耦【在编译期间减少类和类之间的依赖】</code>，也可以在编译时无法确定需要实现哪个接口时使用。</p>
-<p>假设有一个<code>表示接口</code>的Class对象（有可能只包含一个接口 ）,它的<code>确切类型</code>在编译时无法知道。因为我不知道它的确切类型，所以要想构造一个实现这些接口的类（设为类A），不能简单的new出来。那能怎么做呢？利用反射！使用<code>newlnstance方法或反射找出这个类的构造器</code>。但是，因为Java<code>不能实例化一个接口</code>，需要在程序处于运行状态时<code>定义一个新类【即代理类】</code>，然后在这个新类【代理类】的方法中执行。</p>
-<p>为了解决这个问题，有些程序将会生成代码，将这些代码放在一个文件中，调用编译器，然后再加载结果类文件。很自然，这样做的速度会比较慢，并且需要将编译器与程序放在一起。而代理机制则是一种更好的解决方案。<code>代理类可以在运行时创建全新的类</code>。这样的代理类能够实现指定的接口。尤其是，它具有下列方法：</p>
-<ul>
-<li>指定接口所需要的全部方法。</li>
-<li>Object类中的全部方法，例如，toString, equals等</li>
-</ul>
-<p>然而，要实现这样子的代理类，是要提供一个<code>调用处理器（invocation handler）</code>,因为不能在运行时定义新代码。</p>
-<p>调用处理器是实现了InvocationHandler接口的类对象。在这个接口中只有一个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> class AccountServiceImpl implements AccountService </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这里不要在意类的名字，而是注意void,int这些返回类型，有无参数它们的AOP怎么写。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savaAccount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"保存"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateAccount</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"更新"</span> + i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteAccount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"删除"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br></pre></td></tr></table></figure>
+        <!-- TOC -->
 
-<p>调用代理对象任何的方法，调用处理器InvocationHandler的invoke方法会被调用执行。invoke方法表示：无论外界要执行什么方法，都必须经过invoke()方法，而外界的方法method保存在Method对象中，方法的参数保存在Object[]中。</p>
-<p>那怎么创建一个代理对象呢？需要使用Proxy类的newPmxylnstance方法。这个方法冇三个参数： 类加载器（class loader)。作为Java安全模型的一部分，对于系统类和从因特网上下载下来的类，可以使用不同的类加栽器<br>目前，用null表示使用默认的类加载器。<br>•一个Class对象数组，每个元素都是需要实现的接口。</p>
 <ul>
-<li>一个调用处理器。<br>还有两个需要解决的N题。如何定义一个处理器？能够用结果代理对象做些什么？当然， 这两个问题的答案取决干打算使用代理机制解决什么问题&amp;使用代理可能出于很多原因，例如：</li>
-<li>路由对远程服务器的方法调用^<br>•在程序运行期间，将用户接口事件与动作关联起来c</li>
-<li>为调试，跟踪方法调用。<br>在列举的示例中，使用代理和调用处理器跟踪方法调用，并辻定义了一个TraceHander包装 器类存储包装的对象&amp;其中的invoke方法打印出被调用方法的名字和参数，随后用包装好的对 象作为隐式参数调用这个方法.</li>
+<li><a href="#1-代理机制的介绍">1. 代理机制的介绍</a></li>
+<li><a href="#2-调用处理器">2. 调用处理器</a></li>
+<li><a href="#3-代理对象实例代码">3. 代理对象实例代码</a></li>
+<li><a href="#3-创建一个代理对象">3. 创建一个代理对象</a></li>
+<li><a href="#5-代理类的特性">5. 代理类的特性</a></li>
 </ul>
+<!-- /TOC -->
 
+<h2 id="1-代理机制的介绍"><a href="#1-代理机制的介绍" class="headerlink" title="1. 代理机制的介绍"></a>1. 代理机制的介绍</h2><p>代理机制是JavaSE 1.3新增加的特性。利用代理机制可以<code>在运行时</code> 创建一个 <code>实现了一组给定接口的新类</code>。</p>
+<p>spring的IoC是用了代理来实现<code>解耦【在编译期间减少类和类之间的依赖】</code>，AOP用代理来实现<code>方法的增强</code>，也可以在编译时无法确定（哪个实现类）需要实现某个接口时使用。</p>
+        
+          <a class="article-more-a" href="/2020/02/06/Java-代理机制/#more">more >></a>
+        
       
 
       
@@ -206,11 +297,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -270,13 +361,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-2020微信公开课PRO"><a href="#1-2020微信公开课PRO" class="headerlink" title="1. 2020微信公开课PRO"></a>1. 2020微信公开课PRO</h2><h3 id="1-1-张小龙：信息互联的7个思考"><a href="#1-1-张小龙：信息互联的7个思考" class="headerlink" title="1.1 张小龙：信息互联的7个思考"></a>1.1 张小龙：信息互联的7个思考</h3><p>可能从来没有这么一个时代，每天有数亿人花这么多时间，花在手机里面浏览信息。而微信，可能是人们花时间最多的应用。</p>
-<p>所以我也经常会思考，微信作为一个基础的信息传递的工具或者平台，我们一个不经意的动作，可能会引起信息洪流的流向的变化。</p>
-<p>人们视觉上看到的信息，超过了现实中眼睛看到的信息，人们看到的是远方的图像，听到的是远方的声音。从前一个人的世界他的大小，是由他的脚的行走半径来决定的，<code>而现在一个人世界的大小，是由他获得信息的宽广度来决定的</code>。</p>
-<p>信息的宽广度和质量，一直是微信要解决的问题。但人类对信息的广泛连接带来的影响的思考，是落后于网络的发展速度的。网络的发展，尤其是最近几年互联网的发展，使得人人都随时在线，并且面临海量的信息。这在历史上，甚至是十年前，都是难以想象的，人们真的能驾驭这种信息互联吗？</p>
-<h3 id="毕导：永远年轻，永远好奇"><a href="#毕导：永远年轻，永远好奇" class="headerlink" title="毕导：永远年轻，永远好奇"></a>毕导：永远年轻，永远好奇</h3><p><a href="https://daxuepc.com/detail/v_5e181ced0431b_IOeBE563/3?from=p_5e16e674e326a_ULiaHi9C&type=6" target="_blank" rel="noopener">毕导：永远年轻，永远好奇</a></p>
-<p>从生活中的小事，永远年轻，永远好奇，永远探索。</p>
+        <img src="/2020/01/09/微信公开课-记录与思考/wxgkk.jpg" width="500">
+<br><br>
 
+<!-- TOC -->
+
+<ul>
+<li><a href="#1-微信公开课pro">1 微信公开课PRO</a><ul>
+<li><a href="#张小龙信息互联的7个思考">张小龙：信息互联的7个思考</a></li>
+<li><a href="#毕导永远年轻永远好奇">毕导：永远年轻，永远好奇</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+        
+          <a class="article-more-a" href="/2020/01/09/微信公开课-记录与思考/#more">more >></a>
+        
       
 
       
@@ -289,11 +389,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公开课</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信公开课</a>
         		</li>
       		
 		</ul>
@@ -304,83 +404,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/01/09/微信公开课-记录与思考/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-精神旗帜-毛概" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/29/精神旗帜-毛概/">精神旗帜-毛概</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/29/精神旗帜-毛概/" class="archive-article-date">
-  	<time datetime="2019-12-29T11:56:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/12/29/精神旗帜-毛概/精神旗帜.png" width="250">
-<br><br><br>
-        
-          <a class="article-more-a" href="/2019/12/29/精神旗帜-毛概/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/29/精神旗帜-毛概/">展开全文 >></a>
         </p>
       
 
@@ -693,74 +716,6 @@
     <div class="article-info article-info-index">
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/12/synchronized同步锁问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-node-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/node-js/">node.js：为什么你的博客会缺失node.js模块</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/node-js/" class="archive-article-date">
-  	<time datetime="2019-10-11T12:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2019/10/11/node-js/node.js.png" width="200">
-<br><br><br>
-
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
-<li>如果你的hexo博客</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -770,7 +725,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -780,7 +735,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/node-js/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/12/synchronized同步锁问题/">展开全文 >></a>
         </p>
       
 
@@ -968,6 +923,87 @@
 
 
   
+    <article id="post-git-版本控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/git-版本控制/">git:版本控制</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/11/git-版本控制/" class="archive-article-date">
+  	<time datetime="2019-10-11T11:21:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/2019/10/11/git-版本控制/git.png" width="200">
+<br><br><br>
+        
+          <a class="article-more-a" href="/2019/10/11/git-版本控制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/11/git-版本控制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1091,15 +1127,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">索引</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1107,7 +1147,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作空间</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1119,27 +1167,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTML+CSS+JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vs code</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IntelliJ IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
+                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">源代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
